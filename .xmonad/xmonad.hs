@@ -46,7 +46,7 @@ myKeys =
   , ((0,                       xF86XK_AudioRaiseVolume),  spawn "pactl -- set-sink-volume `pactl list sinks short | head -1 | cut -f1` +10%")
   , ((0,                       xF86XK_AudioLowerVolume),  spawn "pactl -- set-sink-volume `pactl list sinks short | head -1 | cut -f1` -10%")
   , ((0,                       xF86XK_AudioMute),         spawn "pactl set-sink-mute 0 toggle")
-  , ((0,                       xF86XK_Display),           spawn "xrandr --auto")
+  , ((0,                       xF86XK_Display),           spawn "arandr")
   -- For BSP Layout
   , ((myModMask .|. mod1Mask,  xK_l),                     sendMessage $ ExpandTowards R)
   , ((myModMask .|. mod1Mask,  xK_h),                     sendMessage $ ExpandTowards L)
