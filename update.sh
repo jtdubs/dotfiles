@@ -7,11 +7,15 @@ UPDATES=
 
 for F in $FILES
 do
-  if [  files/$F -nt ~/$F ]
+  if [ files/$F -nt ~/$F ]
   then
     echo Updating $F...
     cp -pf files/$F ~/$F
     UPDATES=$UPDATES:$F
+  elif [ ~/$F -nt files/$F ]
+  then
+    echo Pulling in newer $F...
+    cp -pf ~/$F files/$F
   fi
 done
 
