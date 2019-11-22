@@ -1,0 +1,161 @@
+[colors]
+background = #151718
+foreground = #eeeeee
+foreground-alt = #d6d6d6
+# positive = #398bc6
+# neutral = #585260
+# warning = #a06e3b
+# negative = #be4678
+positive = #55b5db
+neutral = #41535b
+warning = #db7b55
+negative = #cd3f45
+
+[bar/main]
+width = 100%
+height = 28
+radius = 6.0
+fixed-center = true
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground-alt}
+
+border-size = 0
+line-size = 2
+line-color = #f00
+padding = 1
+module-margin = 1
+
+font-0 = "Noto Sans Mono:size=12;1"
+font-1 = "Noto Sans Symbols:size=12;1"
+font-2 = "Noto Sans Symbols2:size=12;1"
+
+modules-left = layout-xmonad ewmh xwindow
+modules-center = 
+modules-right = backlight pulseaudio battery0 battery1 date
+
+tray-position = right
+tray-padding = 16
+
+[global/wm]
+margin-top = 4
+margin-bottom = 4
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+label-active = " %name% "
+label-active-foreground = ${colors.foreground}
+label-active-underline = ${colors.positive}
+label-occupied = " %name% "
+label-occupied-underline = ${colors.neutral}
+label-urgent = " %name% "
+label-urgent-underline = ${colors.negative}
+label-empty =
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label> <bar>
+label = "BL"
+# label = "💡"
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.foreground}
+bar-fill = ─
+bar-fill-foreground = ${colors.foreground}
+bar-empty = ─
+bar-empty-foreground = ${colors.neutral}
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%Y-%m-%d"
+date-alt = "%Y-%m-%d"
+time = "%H:%M:%S"
+time-alt = "%H:%M:%S"
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.positive}
+label = "%date% %time%"
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume> <bar-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+label-muted = muted
+label-muted-foreground = ${colors.foreground-alt}
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.neutral}
+bar-volume-foreground-1 = ${colors.neutral}
+bar-volume-foreground-2 = ${colors.foreground-alt}
+bar-volume-foreground-3 = ${colors.foreground-alt}
+bar-volume-foreground-4 = ${colors.foreground-alt}
+bar-volume-foreground-5 = ${colors.warning}
+bar-volume-foreground-6 = ${colors.negative}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-foreground = ${colors.foreground}
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.neutral}
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-charging = <label-charging>
+format-charging-underline = ${colors.positive}
+format-discharging = <label-discharging>
+format-discharging-underline = ${colors.warning}
+format-full = <label-full>
+format-full-underline = ${self.format-charging-underline}
+label-charging = "⚡ %percentage%%"
+# label-discharging = "🔋 %percentage%%"
+label-discharging = %percentage%%
+label-full = " * "
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+format-charging = <label-charging>
+format-charging-underline = ${colors.positive}
+format-discharging = <label-discharging>
+format-discharging-underline = ${colors.warning}
+format-full = <label-full>
+format-full-underline = ${self.format-charging-underline}
+label-charging = ⚡ %percentage%%
+# label-discharging = 🔋 %percentage%%
+label-discharging = %percentage%%
+label-full = " * "
+
+[module/layout-xmonad]
+type = custom/script
+exec = tail -F /tmp/.xmonad-layout-log
+exec-if = [ -p /tmp/.xmonad-layout-log ]
+tail = true
+format = <label>
+format-background = ${colors.positive}
+format-foreground = ${colors.background}
+format-padding = 1
+label = %output%
+
+
+
+[settings]
+screenchange-reload = true
+
+; vim:ft=dosini
