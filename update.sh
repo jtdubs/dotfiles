@@ -2,20 +2,20 @@
 
 set -e
 
-FILES=$(find files/ -type f | sed 's/^files\///')
+HOME_FILES=$(find home/ -type f | sed 's/^home\///')
 UPDATES=
 
-for F in $FILES
+for F in $HOME_FILES
 do
-  if [ files/$F -nt ~/$F ]
+  if [ home/$F -nt ~/$F ]
   then
     echo Updating $F...
-    cp -pf files/$F ~/$F
+    cp -pf home/$F ~/$F
     UPDATES=$UPDATES:$F
-  elif [ ~/$F -nt files/$F ]
+  elif [ ~/$F -nt home/$F ]
   then
     echo Pulling in newer $F...
-    cp -pf ~/$F files/$F
+    cp -pf ~/$F home/$F
   fi
 done
 
