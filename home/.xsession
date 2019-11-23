@@ -1,4 +1,4 @@
-PATH=$PATH:/home/jtdubs/.cabal/bin/
+# PATH=$PATH:/home/jtdubs/.cabal/bin/
 
 # set colorscheme
 xsetroot -bg black
@@ -18,4 +18,5 @@ nm-applet &
 alacritty &
 
 # wm
-exec xmonad
+# exec xmonad
+exec ~/.xmonad/xmonad-x86_64-linux

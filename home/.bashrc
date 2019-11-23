@@ -127,7 +127,6 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # programming
-source ~/.ghcup/env
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/bin
 

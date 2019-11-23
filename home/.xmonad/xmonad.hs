@@ -15,6 +15,7 @@ import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Config.Desktop
 import Graphics.X11.ExtraTypes.XF86
 import System.IO
+import System.Directory
 import Control.Monad
 
 import qualified Data.Map as M
@@ -35,6 +36,7 @@ myStatupHook = setWMName "LG3D"
 myKeys = 
   [ ((myModMask,               xK_b),                     sendMessage ToggleStruts)
   , ((myModMask,               xK_r),                     spawn "dmenu_run -l 4 -fn 'xft:Noto Sans Mono:size=10:antialias=true'")
+  , ((myModMask,               xK_q),                     spawn "wm xmonad --recompile && ~/.xmonad/xmonad-x86_64-linux --restart")
   -- Launch specific programs
   , ((myModMask,               xK_o),                     spawn "thunar")
   , ((myModMask,               xK_g),                     spawn "qutebrowser")
@@ -79,7 +81,10 @@ myLogHook = do
                            ppOutput = appendFile "/tmp/.xmonad-layout-log" . (++ "\n") }
 
 main = do
-    safeSpawn "mkfifo" ["/tmp/.xmonad-layout-log"]
+    rc <- doesFileExist "/tmp/.xmonad-layout-log"
+    if not rc
+      then safeSpawn "mkfifo" ["/tmp/.xmonad-layout-log"]
+      else return ()
     xmonad $ docks desktopConfig
       { terminal = myTerminal
       , focusFollowsMouse = myFocusFollowsMouse
