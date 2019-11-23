@@ -1,125 +1,195 @@
 set nocompatible
 filetype off
 
+
+"
+" Load Plugins
+"
 call plug#begin()
-Plug 'ciaranm/securemodelines'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'airblade/vim-rooter'
+Plug 'ciaranm/securemodelines'          " Prevent code execution through modelines
+Plug 'jlanzarotta/bufexplorer'          " Sidebar buffer explorer
+Plug 'airblade/vim-rooter'              " Auto-switch CWD to root of project
 
 " UI
-Plug 'itchyny/lightline.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'andymass/vim-matchup'
-Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim'            " Prettier, more useful modeline
+Plug 'machakann/vim-highlightedyank'    " Show yanks briefly after a highlight
+Plug 'andymass/vim-matchup'             " Show text of matches when highlighting start/end tag
+Plug 'chriskempson/base16-vim'          " Color schemes
 
 " Magic
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+Plug 'neoclide/coc.nvim',
+  \ { 'branch': 'release' }
+" Plug 'autozimu/LanguageClient-neovim',  " Client for 'language servers'
+"   \ { 'branch': 'next',
+"   \   'do':     'bash install.sh' }
 
 " Syntax support
-Plug 'cespare/vim-toml'
-Plug 'stephpy/vim-yaml'
-Plug 'rust-lang/rust.vim'
-Plug 'plasticboy/vim-markdown'
+Plug 'cespare/vim-toml'                 " TOML support
+Plug 'stephpy/vim-yaml'                 " YAML support
+Plug 'rust-lang/rust.vim'               " Rust support
+Plug 'plasticboy/vim-markdown'          " Markdown support
 call plug#end()
 
+
+"
+" Set Colorscheme
+"
 colorscheme base16-seti
 
-let g:lightline = {
-  \ 'colorscheme': 'seti',
-  \ }
 
-
+"
+" Enable filetype plugins and syntax highlighting 
+"
 filetype plugin indent on
 
 syntax enable
 syntax on
 
+
+"
+" Switch leader to backslash
+"
 let mapleader='\'
 
-hi CursorLine term=none cterm=none ctermbg=3
-hi CursorColumn term=none cterm=none ctermbg=3
 
-set backspace=indent,eol,start
-set encoding=utf-8
-set expandtab
-set hidden
-set hlsearch
-set ignorecase
-set incsearch
-set laststatus=2
-set lazyredraw
-set lcs=tab:»·,trail:·
-set list
-set modelines=0
-set nobackup
-set nowrap
-set nowritebackup
-set number
-set relativenumber
-set ruler
-set shiftround
-set shiftwidth=2
-set shortmess=atI
-set shortmess+=c
-set sidescroll=1
-set smartcase
-set softtabstop=4
-set tabstop=4
-set termguicolors
-set virtualedit=block
-set visualbell
-set noshowmode
-set gdefault
-set ttyfast
-set showcmd
-set mouse=a
-set updatetime=300
-" set signcolumn=yes
-set undodir=~/.vimdid
-set undofile
+"
+" Set basic options
+"
+set backspace=indent,eol,start  " Backspace across line breaks, start-of-insert, etc.
+set encoding=utf-8              " Default for new files is UTF-8
+set expandtab                   " Tabs are evil
+set cursorline                  " Highlight current line
+set cursorcolumn                " Highlight current column
+set hidden                      " Allow background buffers to stay loaded
+set hlsearch                    " Highlight matches
+set ignorecase                  " Case insensitive-searech
+set smartcase                   " ... unless UPPER_CASE chars are searched for
+set incsearch                   " Search while typing
+set laststatus=2                " Permanent statusline
+set lazyredraw                  " Faster redraws
+set lcs=tab:»·,trail:·          " Set chars to draw when visualizing special chars
+set list                        " Show tabs and trailing whitespace
+set modelines=0                 " ??
+set nobackup                    " No backup files
+set nowritebackup               " No backup files
+set nowrap                      " No line wrapping
+set number                      " Show line numbers
+set relativenumber              " Use relative numbering
+set shiftround                  " Always shift to a multiple of shiftwidth
+set shiftwidth=4                " Default tabstop is 4
+set softtabstop=4               " Seriously
+set tabstop=4                   " Seriously
+set shortmess=atIc              " Disable lots of annoying prompts
+set sidescroll=1                " Allow horizontal scrolling one-char-at-a-time
+set termguicolors               " Use terminal colors
+set virtualedit=block           " Allow block editing to affect where there is no data
+set visualbell                  " No audio bell
+" set noshowmode
+set gdefault                    " Substitution are global by default
+set ttyfast                     " We are on a fast tty, so redraw agressively
+set showcmd                     " We are on a fast tty, so show partial commands
+set mouse=a                     " Allow all mouse-based interactions
+set signcolumn=yes              " Enable sign-column for hint/lint/etc. integration
+set undodir=~/.vimdid           " Centralized undo repository
+set undofile                    " Keep undo files there
+set updatetime=300              " Faster disk writes
 
+
+"
+" Helper bindings
+"
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
 nnoremap <silent> <leader>tl :set invlist<cr>:set list?<cr>
-nnoremap <silent> <leader>tn :set invnumber<cr>:set number?<cr>
+nnoremap <silent> <leader>tn :set invnumber<cr>:set invrelativenumber<cr>
 nnoremap <silent> <leader>tw :set invwrap<cr>:set wrap?<cr>
 nnoremap <silent> <leader>ve :e ~/.vimrc<cr>
-nnoremap <silent> <leader>vs :source ~/.vimrc<cr>
+nnoremap <silent> <leader>vs :source ~/.local/nvim/init.vim<cr>
 nnoremap Y y$
 
+
+"
+" When searching, keep matches centered in screen
+"
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 
+
+"
+" Fix how vertical movement interacts with wrapping
+"
 nnoremap j gj
 nnoremap k gk
 
-augroup asm
-  au!
-  autocmd BufNewFile,BufRead *.s set syntax=asmM6502
-augroup END
 
-" BufExplorer extension
-let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
+"
+" Lightline config
+"
+let g:lightline = {
+  \   'colorscheme': 'seti',
+  \   'active': {
+  \     'left':  [
+  \                [ 'mode', 'paste' ],
+  \                [ 'readonly', 'filename', 'modified' ],
+  \                [ 'charvalue', 'charvaluehex' ]
+  \              ],
+  \     'right': [
+  \                [ 'lineinfo' ],
+  \                [ 'percent' ],
+  \                [ 'fileformat', 'fileencoding', 'filetype' ]
+  \              ]
+  \   },
+  \   'inactive': {
+  \     'left':  [
+  \                [ 'filename' ]
+  \              ],
+  \     'right': [
+  \                [ 'lineinfo' ],
+  \                [ 'percent' ]
+  \              ]
+  \   },
+  \   'tabline': {
+  \     'left':  [
+  \                [ 'tabs' ]
+  \              ],
+  \     'right': [
+  \                [ 'close' ]
+  \              ]
+  \   }
+  \ }
+
+
+" augroup asm
+"   au!
+"   autocmd BufNewFile,BufRead *.s set syntax=asmM6502
+" augroup END
+
+
+"
+" BufExporer config
+"
+let g:bufExplorerSortBy='name' " Sort by the buffer's name.
 nnoremap <silent> <tab> :ToggleBufExplorer<CR>
 
 
-let g:LanguageClient_serverCommands = {
-  \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-  \ 'python': ['~/.local/bin/pyls']
-  \ }
+"
+" LanguageClient config
+"
+" let g:LanguageClient_serverCommands = {
+"   \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+"   \ 'python': ['~/.local/bin/pyls']
+"   \ }
+" 
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+"
+" COC Config
+"
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -133,6 +203,16 @@ endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -150,21 +230,11 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
