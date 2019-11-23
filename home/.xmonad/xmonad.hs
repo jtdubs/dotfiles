@@ -60,7 +60,7 @@ myKeys =
   ]
 
 myLayoutHook = spacingRaw True (Border 0 0 0 0) True (Border 4 4 4 4) True
-             $ smartBorders $ avoidStruts $ emptyBSP ||| Full ||| tiled ||| Mirror tiled
+             $ smartBorders $ avoidStruts $ emptyBSP ||| Full
   where tiled = Tall nmaster delta ratio
         nmaster = 1
         ratio = 2/3
