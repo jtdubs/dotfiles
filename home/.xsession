@@ -1,5 +1,3 @@
-# PATH=$PATH:/home/jtdubs/.cabal/bin/
-
 # set colorscheme
 xsetroot -bg black
 xrdb -load ~/.Xresources
@@ -18,5 +16,4 @@ nm-applet &
 alacritty &
 
 # wm
-# exec xmonad
 exec ~/.xmonad/xmonad-x86_64-linux

@@ -21,10 +21,8 @@ import Control.Monad
 import qualified Data.Map as M
 
 myTerminal           = "alacritty"
--- myTerminal           = "rxvt-unicode"
 myBorderWidth        = 2
 myNormalBorderColor  = "#41535b"
--- myFocusedBorderColor = "#2a9292"
 myFocusedBorderColor = "#55b5db"
 myModMask            = mod4Mask
 myFocusFollowsMouse  = False
