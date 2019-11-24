@@ -32,12 +32,13 @@ myWorkspaces = map show [1..9]
 myStatupHook = setWMName "LG3D"
 
 myKeys = 
-  [ ((myModMask,               xK_b),                     sendMessage ToggleStruts)
+  [ ((myModMask,               xK_F11),                   sendMessage ToggleStruts)
   , ((myModMask,               xK_r),                     spawn "dmenu_run -l 4 -fn 'xft:Noto Sans Mono:size=10:antialias=true'")
   , ((myModMask,               xK_q),                     spawn "wm xmonad --recompile && ~/.xmonad/xmonad-x86_64-linux --restart")
   -- Launch specific programs
   , ((myModMask,               xK_o),                     spawn "thunar")
-  , ((myModMask,               xK_g),                     spawn "qutebrowser")
+  , ((myModMask,               xK_g),                     spawn "google-chrome")
+  , ((myModMask,               xK_b),                     spawn "qutebrowser")
   , ((myModMask,               xK_s),                     spawn "xscreensaver-command -lock")
   , ((myModMask,               xK_c),                     spawn "galculator")
   -- For Fn Keys
