@@ -13,7 +13,7 @@ polybar main &
 nm-applet &
 
 # startup apps
-alacritty &
+alacritty -e tmux new-session -A -s main &
 
 # wm
 exec ~/.xmonad/xmonad-x86_64-linux

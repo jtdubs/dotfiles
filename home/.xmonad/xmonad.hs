@@ -41,6 +41,7 @@ myKeys =
   , ((myModMask,               xK_b),                     spawn "qutebrowser")
   , ((myModMask,               xK_s),                     spawn "xscreensaver-command -lock")
   , ((myModMask,               xK_c),                     spawn "galculator")
+  , ((myModMask,               xK_Return),                spawn "alacritty -e tmux new-session -A -s main")
   -- For Fn Keys
   , ((0,                       xF86XK_MonBrightnessUp),   spawn "xbacklight -inc 10%")
   , ((0,                       xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10%")
@@ -48,6 +49,8 @@ myKeys =
   , ((0,                       xF86XK_AudioLowerVolume),  spawn "pactl -- set-sink-volume `pactl list sinks short | head -1 | cut -f1` -10%")
   , ((0,                       xF86XK_AudioMute),         spawn "pactl set-sink-mute 0 toggle")
   , ((0,                       xF86XK_Display),           spawn "autorandr -c")
+  , ((0,                       xF86XK_Calculator),        spawn "galculator")
+  , ((0,                       xF86XK_HomePage),          spawn "qutebrowser")
   -- For BSP Layout
   , ((myModMask .|. mod1Mask,  xK_l),                     sendMessage $ ExpandTowards R)
   , ((myModMask .|. mod1Mask,  xK_h),                     sendMessage $ ExpandTowards L)
