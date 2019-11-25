@@ -154,12 +154,12 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}| #{username}#{r
 # status left style
 tmux_conf_theme_status_left_fg='#d6d6d6,#151718,#151718'  # black, white , white
 tmux_conf_theme_status_left_bg='#41535b,#eeeeee,#3b758c'  # yellow, pink, white blue
-tmux_conf_theme_status_left_attr='bold,none,none'
+tmux_conf_theme_status_left_attr='none,none,none'
 
 # status right style
 tmux_conf_theme_status_right_fg='#151718,#151718,#d6d6d6' # light gray, white, black
 tmux_conf_theme_status_right_bg='#3b758c,#d6d6d6,#41535b' # dark gray, red, white
-tmux_conf_theme_status_right_attr='none,none,bold'
+tmux_conf_theme_status_right_attr='none,none,none'
 
 # pairing indicator
 tmux_conf_theme_pairing='  👓  '          # U+1F453

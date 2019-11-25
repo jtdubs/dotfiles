@@ -13,8 +13,8 @@ negative = #cd3f45
 
 [bar/main]
 width = 100%
-height = 28
-radius = 6.0
+height = 24
+radius = 0.0
 fixed-center = true
 bottom = false
 
@@ -24,7 +24,7 @@ foreground = ${colors.foreground-alt}
 border-size = 0
 line-size = 2
 line-color = #f00
-padding = 1
+padding = 0
 module-margin = 1
 
 font-0 = "Noto Sans Mono:size=12;1"
@@ -39,7 +39,7 @@ tray-position = right
 tray-padding = 16
 
 [global/wm]
-margin-top = 4
+margin-top = 0
 margin-bottom = 4
 
 [module/ewmh]
@@ -48,13 +48,17 @@ pin-workspaces = false
 enable-click = true
 enable-scroll = false
 label-active = " %name% "
-label-active-foreground = ${colors.foreground}
-label-active-underline = ${colors.positive}
+label-active-foreground = ${colors.background}
+label-active-background = ${colors.positive}
 label-occupied = " %name% "
-label-occupied-underline = ${colors.neutral}
+label-occupied-foreground = ${colors.positive}
+label-occupied-background = ${colors.background}
 label-urgent = " %name% "
-label-urgent-underline = ${colors.negative}
-label-empty =
+label-urgent-foreground = ${colors.negative}
+label-urgent-background = ${colors.background}
+label-empty = " %name% "
+label-empty-foreground = ${colors.neutral}
+label-empty-background = ${colors.background}
 
 [module/xwindow]
 type = internal/xwindow
@@ -82,7 +86,7 @@ date-alt = "%Y-%m-%d"
 time = "%H:%M:%S"
 time-alt = "%H:%M:%S"
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.positive}
+# format-underline = ${colors.positive}
 label = "%date% %time%"
 
 [module/pulseaudio]
@@ -116,11 +120,11 @@ battery = BAT0
 adapter = AC
 full-at = 98
 format-charging = <label-charging>
-format-charging-underline = ${colors.positive}
+# format-charging-underline = ${colors.positive}
 format-discharging = <label-discharging>
-format-discharging-underline = ${colors.warning}
+# format-discharging-underline = ${colors.warning}
 format-full = <label-full>
-format-full-underline = ${self.format-charging-underline}
+# format-full-underline = ${self.format-charging-underline}
 label-charging = "⚡ %percentage%%"
 # label-discharging = "🔋 %percentage%%"
 label-discharging = %percentage%%
@@ -132,11 +136,11 @@ battery = BAT1
 adapter = AC
 full-at = 98
 format-charging = <label-charging>
-format-charging-underline = ${colors.positive}
+# format-charging-underline = ${colors.positive}
 format-discharging = <label-discharging>
-format-discharging-underline = ${colors.warning}
+# format-discharging-underline = ${colors.warning}
 format-full = <label-full>
-format-full-underline = ${self.format-charging-underline}
+# format-full-underline = ${self.format-charging-underline}
 label-charging = ⚡ %percentage%%
 # label-discharging = 🔋 %percentage%%
 label-discharging = %percentage%%
@@ -148,12 +152,10 @@ exec = tail -F /tmp/.xmonad-layout-log
 exec-if = [ -p /tmp/.xmonad-layout-log ]
 tail = true
 format = <label>
-format-background = ${colors.positive}
-format-foreground = ${colors.background}
+format-background = ${colors.neutral}
+format-foreground = ${colors.foreground}
 format-padding = 1
 label = %output%
-
-
 
 [settings]
 screenchange-reload = true
