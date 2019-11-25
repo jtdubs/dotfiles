@@ -488,39 +488,39 @@ live_config_reload: true
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
 
-# Base16 iA Dark - alacritty color config
-# iA Inc. (modified by aramisgithub)
+# Base16 Seti UI - alacritty color config
+# 
 colors:
   # Default colors
   primary:
-    background: '0x1a1a1a'
-    foreground: '0xcccccc'
+    background: '0x151718'
+    foreground: '0xd6d6d6'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1a1a1a'
-    cursor: '0xcccccc'
+    text: '0x151718'
+    cursor: '0xd6d6d6'
 
   # Normal colors
   normal:
-    black:   '0x1a1a1a'
-    red:     '0xd88568'
-    green:   '0x83a471'
-    yellow:  '0xb99353'
-    blue:    '0x8eccdd'
-    magenta: '0xb98eb2'
-    cyan:    '0x7c9cae'
-    white:   '0xcccccc'
+    black:   '0x151718'
+    red:     '0xcd3f45'
+    green:   '0x9fca56'
+    yellow:  '0xe6cd69'
+    blue:    '0x55b5db'
+    magenta: '0xa074c4'
+    cyan:    '0x55dbbe'
+    white:   '0xd6d6d6'
 
   # Bright colors
   bright:
-    black:   '0x767676'
-    red:     '0xd86868'
-    green:   '0x222222'
-    yellow:  '0x1d414d'
-    blue:    '0xb8b8b8'
-    magenta: '0xe8e8e8'
-    cyan:    '0x8b6c37'
-    white:   '0xf8f8f8'
+    black:   '0x41535b'
+    red:     '0xdb7b55'
+    green:   '0x282a2b'
+    yellow:  '0x3b758c'
+    blue:    '0x43a5d5'
+    magenta: '0xeeeeee'
+    cyan:    '0x8a553f'
+    white:   '0xffffff'
 
 draw_bold_text_with_bright_colors: false
