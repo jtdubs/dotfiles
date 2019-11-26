@@ -13,7 +13,7 @@ monitor-strict = false
 width = 100%
 height = 22
 radius = 0.0
-fixed-center = false
+fixed-center = true
 bottom = false
 
 foreground = ${colors.black}
@@ -29,19 +29,21 @@ font-0 = "Noto Sans Mono:size=12;3"
 font-1 = "Noto Sans Symbols:size=12;3"
 font-2 = "Noto Sans Symbols2:size=12;3"
 
-modules-left = date ewmh
+modules-left = date battery0 battery1 ewmh
 modules-center = xwindow
-modules-right = backlight pulseaudio battery0 battery1
+modules-right = pulseaudio backlight
 
 tray-detached		= false
 tray-position		= right
 tray-offset-x		= 0
 tray-offset-y		= 0
 tray-maxsize		= 128
-tray-padding		= 32
+tray-padding		= 16
 tray-scale		    = 1
-tray-foreground 	= ${colors.light-gray}
-tray-background 	= ${colors.medium-gray}
+tray-background 	= ${colors.light-gray}
+
+wm-restack = bspwm
+override-redirect = true
 
 [global/wm]
 margin-top = 0
@@ -75,14 +77,14 @@ type = internal/backlight
 card = intel_backlight
 format = <label> <bar>
 format-padding = 2
-format-foreground = ${colors.black}
-format-background = ${colors.light-gray}
+format-foreground = ${colors.light-gray}
+format-background = ${colors.medium-gray}
 label = "BL"
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = ${colors.black}
+bar-indicator-foreground = ${colors.light-gray}
 bar-fill = ─
-bar-fill-foreground = ${colors.dark-blue}
+bar-fill-foreground = ${colors.light-gray}
 bar-empty = ─
 bar-empty-foreground = ${colors.black}
 
@@ -94,8 +96,8 @@ date-alt = "%Y-%m-%d"
 time = "%H:%M:%S"
 time-alt = "%H:%M:%S"
 format-prefix-foreground = ${colors.light-gray}
-format-foreground = ${colors.black}
-format-background = ${colors.light-gray}
+format-foreground = ${colors.light-gray}
+format-background = ${colors.medium-gray}
 format-padding = 2
 label = "%date% %time%"
 
@@ -114,7 +116,7 @@ bar-volume-foreground-0 = ${colors.black}
 bar-volume-foreground-1 = ${colors.black}
 bar-volume-foreground-2 = ${colors.dark-blue}
 bar-volume-foreground-3 = ${colors.dark-blue}
-bar-volume-foreground-4 = ${colors.dark-blue}
+bar-volume-foreground-4 = ${colors.light-blue}
 bar-volume-foreground-5 = ${colors.orange}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
