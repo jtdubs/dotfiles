@@ -161,3 +161,6 @@ super + equal
 
 super + ctrl + shift + {1,2,3,4,5,6,7,8,9}
 	bspc node @parent -r {0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9}
+
+super + F11
+	~/.config/bspwm/toggle_fullscreen.sh
