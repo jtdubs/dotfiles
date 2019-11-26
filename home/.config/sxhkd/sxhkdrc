@@ -6,7 +6,13 @@ super + shift + {Return,a}
 	alacritty {-e tmux new-session -A -s main,_}
 
 super + r
-	dmenu_run -l 4 -fn 'xft:Noto Sans Mono:size=10:antialias=true'
+	dmenu_run \
+		-l 8 \
+		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
+		-nb "#3b758c" \
+		-nf "#151718" \
+		-sb "#55b5db" \
+		-sf "#151718"
 
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -113,6 +119,7 @@ super + s
 # rotate parent
 super + shift + {Left,Right}
 	bspc node @parent -R {270,90}
+
 super + ctrl + shift + {h,l}
 	bspc node @parent -R {270,90}
 
