@@ -2,41 +2,40 @@
 background = #151718
 foreground = #eeeeee
 foreground-alt = #d6d6d6
-# positive = #398bc6
-# neutral = #585260
-# warning = #a06e3b
-# negative = #be4678
 positive = #55b5db
 neutral = #41535b
 warning = #db7b55
 negative = #cd3f45
 
 [bar/main]
+monitor-strict = false
+
 width = 100%
-height = 24
+height = 22
 radius = 0.0
-fixed-center = true
+fixed-center = false
 bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground-alt}
 
 border-size = 0
-line-size = 2
+line-size = 0
 line-color = #f00
 padding = 0
-module-margin = 1
+module-margin = 0
 
-font-0 = "Noto Sans Mono:size=12;1"
-font-1 = "Noto Sans Symbols:size=12;1"
-font-2 = "Noto Sans Symbols2:size=12;1"
+font-0 = "Noto Sans Mono:size=12;3"
+font-1 = "Noto Sans Symbols:size=12;3"
+font-2 = "Noto Sans Symbols2:size=12;3"
 
-modules-left = layout-xmonad ewmh xwindow
-modules-center = 
-modules-right = backlight pulseaudio battery0 battery1 date
+modules-left = layout-xmonad date ewmh
+modules-center = xwindow
+modules-right = backlight pulseaudio battery0 battery1
 
 tray-position = right
 tray-padding = 16
+tray-scale = 1.0
 
 [global/wm]
 margin-top = 0
@@ -63,6 +62,9 @@ label-empty-background = ${colors.background}
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:60:...%
+format-padding = 2
+# label-foreground = ${colors.background}
+# label-background = ${colors.positive}
 
 [module/backlight]
 type = internal/backlight
@@ -77,6 +79,7 @@ bar-fill = ─
 bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-foreground = ${colors.neutral}
+format-padding = 2
 
 [module/date]
 type = internal/date
@@ -86,12 +89,16 @@ date-alt = "%Y-%m-%d"
 time = "%H:%M:%S"
 time-alt = "%H:%M:%S"
 format-prefix-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.background}
+format-background = ${colors.foreground-alt}
+format-padding = 2
 # format-underline = ${colors.positive}
 label = "%date% %time%"
 
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume> <bar-volume>
+format-volume-padding = 2
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 label-muted = muted
@@ -113,6 +120,7 @@ bar-volume-empty-foreground = ${colors.neutral}
 ramp-volume-0 = 🔈
 ramp-volume-1 = 🔉
 ramp-volume-2 = 🔊
+control-panel = pavucontrol
 
 [module/battery0]
 type = internal/battery
@@ -120,10 +128,13 @@ battery = BAT0
 adapter = AC
 full-at = 98
 format-charging = <label-charging>
+format-charging-padding = 2
 # format-charging-underline = ${colors.positive}
 format-discharging = <label-discharging>
+format-discharging-padding = 2
 # format-discharging-underline = ${colors.warning}
 format-full = <label-full>
+format-full-padding = 2
 # format-full-underline = ${self.format-charging-underline}
 label-charging = "⚡ %percentage%%"
 # label-discharging = "🔋 %percentage%%"
@@ -136,10 +147,13 @@ battery = BAT1
 adapter = AC
 full-at = 98
 format-charging = <label-charging>
+format-charging-padding = 2
 # format-charging-underline = ${colors.positive}
 format-discharging = <label-discharging>
+format-discharging-padding = 2
 # format-discharging-underline = ${colors.warning}
 format-full = <label-full>
+format-full-padding = 2
 # format-full-underline = ${self.format-charging-underline}
 label-charging = ⚡ %percentage%%
 # label-discharging = 🔋 %percentage%%
@@ -154,8 +168,8 @@ tail = true
 format = <label>
 format-background = ${colors.neutral}
 format-foreground = ${colors.foreground}
-format-padding = 1
-label = %output%
+format-padding = 2
+label = "%output%"
 
 [settings]
 screenchange-reload = true
