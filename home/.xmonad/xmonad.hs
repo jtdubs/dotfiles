@@ -72,6 +72,7 @@ myLayoutHook = spacingRaw True (Border 0 0 0 0) True (Border 4 4 4 4) True
 
 myManageHook = composeAll
   [ title =? "galculator" --> (placeHook (fixed (0.5, 0.5)) <+> doFloat)
+  , title =? "Volume Control" --> (placeHook (fixed (0.5, 0.5)) <+> doFloat)
   , manageDocks
   , manageHook defaultConfig
   ]
