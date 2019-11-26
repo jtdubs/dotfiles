@@ -19,28 +19,6 @@ do
   fi
 done
 
-if [[ $UPDATES =~ xmonad ]]
-then
-  echo Restarting xmonad...
-  xmonad --recompile > /dev/null 2>&1
-  xmonad --restart   > /dev/null 2>&1
-fi
-
-if [[ $UPDATES =~ polybar ]]
-then
-  echo Restarting polybar...
-
-  # kill polybar
-  killall -q polybar || true
-  while pgrep -u $UID -x polybar > /dev/null
-  do
-    sleep 1
-  done
-
-  # start polybar
-  polybar main > /dev/null 2>&1 &
-fi
-
 if [[ $UPDATES =~ nvim ]]
 then
   echo Updating NVim...
