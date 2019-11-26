@@ -86,7 +86,6 @@ set termguicolors               " Use terminal colors
 set virtualedit=block           " Allow block editing to affect where there is no data
 set visualbell                  " No audio bell
 " set noshowmode
-set gdefault                    " Substitution are global by default
 set ttyfast                     " We are on a fast tty, so redraw agressively
 set showcmd                     " We are on a fast tty, so show partial commands
 set mouse=a                     " Allow all mouse-based interactions
