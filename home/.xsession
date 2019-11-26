@@ -5,6 +5,9 @@ xrdb -load ~/.Xresources
 # dbus
 dbus-update-activation-environment --systemd DISPLAY
 
+# screensaver
+xscreensaver -nosplash &
+
 # audio
 start-pulseaudio-x11
 
