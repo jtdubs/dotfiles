@@ -67,7 +67,7 @@ tmux_conf_theme_mode_attr='none'
 
 # status line style
 tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='#151718'                     # dark gray
+tmux_conf_theme_status_bg='#3b758c'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -88,8 +88,8 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg='#3b758c'              # light gray
-tmux_conf_theme_window_status_bg='#151718'              # dark gray
+tmux_conf_theme_window_status_fg='#151718'              # light gray
+tmux_conf_theme_window_status_bg='#3b758c'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format=' #I #W '
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
@@ -104,15 +104,15 @@ tmux_conf_theme_window_status_format=' #I #W '
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg='#151718'      # black
-tmux_conf_theme_window_status_current_bg='#3b758c'      # light blue
+tmux_conf_theme_window_status_current_bg='#43a5d5'      # light blue
 tmux_conf_theme_window_status_current_attr='none'
 tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
 # window activity status style
-tmux_conf_theme_window_status_activity_fg='#3b758c'
-tmux_conf_theme_window_status_activity_bg='#151718'
+tmux_conf_theme_window_status_activity_fg='#151718'
+tmux_conf_theme_window_status_activity_bg='#db7b55'
 tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
@@ -121,7 +121,7 @@ tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink'
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='#3b758c'         # light blue
+tmux_conf_theme_window_status_last_fg='#151718'         # light blue
 tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
