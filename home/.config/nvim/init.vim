@@ -28,6 +28,7 @@ Plug 'cespare/vim-toml'                 " TOML support
 Plug 'stephpy/vim-yaml'                 " YAML support
 Plug 'rust-lang/rust.vim'               " Rust support
 Plug 'plasticboy/vim-markdown'          " Markdown support
+Plug 'kovetskiy/sxhkd-vim'              " For BSPWM's sxhkd
 call plug#end()
 
 

@@ -1,0 +1,147 @@
+#
+# wm independent hotkeys
+#
+
+super + shift + {Return,a}
+	alacritty {-e tmux new-session -A -s main,_}
+
+super + r
+	dmenu_run -l 4 -fn 'xft:Noto Sans Mono:size=10:antialias=true'
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+XF86Calculator
+	galculator
+
+ctrl + alt + Delete
+	xscreensaver-command -lock
+
+{XF86HomePage,super + g}
+	qutebrowser
+
+super + c
+	google-chrome
+
+XF86Display
+	autorandr -c
+
+XF86MonBrightness{Down,Up}
+	xbacklight {-dec,-inc} 10%
+
+XF86Audio{Lower,Raise}Volume
+	pactl -- set-sink-volume `pactl list sinks short | head -1 | cut -f1` {-,+}10%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill windows
+super + {shift,_} + w
+	bspc node -{k,c}
+
+# alternate between the tiled and monocle layout
+super + space
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+# TODO: what does this mean??
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + Return
+	bspc node -s biggest
+
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,f}
+	bspc node -t {tiled,pseudo_tiled,floating}
+
+
+#
+# focus/swap
+#
+
+# focus or move the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+super + {_,shift + }n
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# swap with sibling
+super + s
+	bspc node @parent -R 180; \
+	bspc node @brother -R 180
+
+# rotate parent
+super + shift + {Left,Right}
+	bspc node @parent -R {270,90}
+super + ctrl + shift + {h,l}
+	bspc node @parent -R {270,90}
+
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}

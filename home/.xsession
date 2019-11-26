@@ -16,4 +16,5 @@ nm-applet &
 alacritty -e tmux new-session -A -s main &
 
 # wm
-exec ~/.xmonad/xmonad-x86_64-linux
+# exec ~/.xmonad/xmonad-x86_64-linux
+exec bspwm 2>&1 > ~/.config/bspwm/logs
