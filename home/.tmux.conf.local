@@ -44,25 +44,25 @@ tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border='#444444'                   # gray
-tmux_conf_theme_pane_active_border='#3b758c'            # light blue
+tmux_conf_theme_pane_active_border='#43a5d5'            # light blue
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='#3b758c'                # light blue
-tmux_conf_theme_pane_active_indicator='#3b758c'         # light blue
+tmux_conf_theme_pane_indicator='#43a5d5'                # light blue
+tmux_conf_theme_pane_active_indicator='#43a5d5'         # light blue
 
 # status line style
 tmux_conf_theme_message_fg='#151718'                    # black
-tmux_conf_theme_message_bg='#3b758c'                    # yellow
+tmux_conf_theme_message_bg='#43a5d5'                    # yellow
 tmux_conf_theme_message_attr='none'
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg='#151718'            # yellow
-tmux_conf_theme_message_command_bg='#3b758c'            # black
+tmux_conf_theme_message_command_bg='#43a5d5'            # black
 tmux_conf_theme_message_command_attr='none'
 
 # window modes style
 tmux_conf_theme_mode_fg='#151718'                       # black
-tmux_conf_theme_mode_bg='#3b758c'                       # yellow
+tmux_conf_theme_mode_bg='#43a5d5'                       # yellow
 tmux_conf_theme_mode_attr='none'
 
 # status line style
