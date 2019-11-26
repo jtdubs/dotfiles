@@ -9,7 +9,7 @@ dbus-update-activation-environment --systemd DISPLAY
 start-pulseaudio-x11
 
 # toolbar
-polybar -reload main &
+~/.config/polybar/launch.sh &
 nm-applet &
 
 # startup apps
