@@ -1,10 +1,5 @@
 # set screen resolution
-if [ $(autorandr --detected) -ne $(autorandr --current) ]
-then
-    sleep 2
-    autorandr -c
-    sleep 5
-fi
+~/bin/auto_monitor.sh
 
 # set colorscheme
 xsetroot -bg black
@@ -21,10 +16,13 @@ start-pulseaudio-x11
 
 # toolbar
 nm-applet &
-~/.config/polybar/launch.sh &
+~/.config/polybar/launch-polybar.sh &
 
 # startup apps
 alacritty -e tmux new-session -A -s main &
+
+# numlock
+numlockx on
 
 # wm
 exec bspwm 2>&1 > ~/.config/bspwm/logs
