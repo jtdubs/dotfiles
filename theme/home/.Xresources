@@ -1,0 +1,62 @@
+Rxvt.background: black
+Rxvt.foreground: white
+Rxvt.font: xft:RobotoMono-Medium:size=10:antialias=true
+Rxvt.boldFont: xft:RobotoMono-Bold:size=10:antialias=true
+Rxvt.italicFont: xft:RobotoMono-MediumItalic:size=10:antialias=true
+Rxvt.boldItalicFont: xft:RobotoMono-BoldItalic:size=10:antialias=true
+Rxvt.scrollBar: false
+Rxvt.cursorBlink: true
+Rxvt.urlLauncher: google-chrome
+Rxvt.saveLines: 10000
+Rxvt.scrollTtyOutput: false
+Rxvt.scrollWithBuffer: false
+Rxvt.scrollTtyKeypress: true
+Rxvt.secondaryScreen: 1
+Rxvt.secondaryScroll: 0
+Rxvt.secondaryWheel: 1
+
+! Base16 Seti UI
+! Scheme: 
+
+#define base00 ##base00##
+#define base01 #282a2b
+#define base02 #3b758c
+#define base03 #41535b
+#define base04 ##base04##
+#define base05 ##base05##
+#define base06 ##base06##
+#define base07 ##base07##
+#define base08 #cd3f45
+#define base09 ##base09##
+#define base0A ##base0A##
+#define base0B ##base0B##
+#define base0C ##base0C##
+#define base0D ##base0D##
+#define base0E ##base0E##
+#define base0F ##base0F##
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07

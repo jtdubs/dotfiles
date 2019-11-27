@@ -1,0 +1,175 @@
+[colors]
+black = ##base00##
+light-gray = ##base05##
+light-blue = ##base0D##
+dark-blue = #3b758c
+medium-gray = #41535b
+orange = ##base09##
+red = #cd3f45
+
+[bar/main]
+monitor-strict = false
+
+width = 100%
+height = 22
+radius = 0.0
+fixed-center = true
+bottom = false
+
+foreground = ${colors.black}
+background = ${colors.dark-blue}
+
+border-size = 0
+line-size = 0
+line-color = #f00
+padding = 0
+module-margin = 0
+
+font-0 = "Noto Sans Mono:size=12;3"
+font-1 = "Noto Sans Symbols:size=12;3"
+font-2 = "Noto Sans Symbols2:size=12;3"
+
+modules-left = date battery0 battery1 ewmh
+modules-center = xwindow
+modules-right = pulseaudio backlight
+
+tray-detached		= false
+tray-position		= right
+tray-offset-x		= 0
+tray-offset-y		= 0
+tray-maxsize		= 128
+tray-padding		= 16
+tray-scale		    = 1
+tray-background 	= ${colors.light-gray}
+
+wm-restack = bspwm
+override-redirect = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+label-active = " %name% "
+label-active-foreground = ${colors.black}
+label-active-background = ${colors.light-blue}
+label-occupied = " %name% "
+label-occupied-foreground = ${colors.black}
+label-occupied-background = ${colors.dark-blue}
+label-urgent = " %name% "
+label-urgent-foreground = ${colors.black}
+label-urgent-background = ${colors.black}
+label-empty =
+label-empty-foreground = ${colors.black}
+label-empty-background = ${colors.dark-blue}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+format-padding = 2
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label> <bar>
+format-padding = 2
+format-foreground = ${colors.light-gray}
+format-background = ${colors.medium-gray}
+label = "BL"
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.light-gray}
+bar-fill = ─
+bar-fill-foreground = ${colors.light-gray}
+bar-empty = ─
+bar-empty-foreground = ${colors.black}
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%Y-%m-%d"
+date-alt = "%Y-%m-%d"
+time = "%H:%M:%S"
+time-alt = "%H:%M:%S"
+format-prefix-foreground = ${colors.light-gray}
+format-foreground = ${colors.light-gray}
+format-background = ${colors.medium-gray}
+format-padding = 2
+label = "%date% %time%"
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume> <bar-volume>
+format-volume-padding = 2
+format-volume-foreground = ${colors.black}
+format-volume-background = ${colors.light-gray}
+label-volume = VOL %percentage%%
+label-volume-foreground = ${colors.black}
+label-muted = muted
+label-muted-foreground = ${colors.black}
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.black}
+bar-volume-foreground-1 = ${colors.black}
+bar-volume-foreground-2 = ${colors.dark-blue}
+bar-volume-foreground-3 = ${colors.dark-blue}
+bar-volume-foreground-4 = ${colors.light-blue}
+bar-volume-foreground-5 = ${colors.orange}
+bar-volume-foreground-6 = ${colors.red}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-foreground = ${colors.black}
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.black}
+control-panel = pavucontrol
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-charging = <label-charging>
+format-charging-padding = 2
+format-charging-foreground = ${colors.black}
+format-charging-background = ${colors.light-gray}
+format-discharging = <label-discharging>
+format-discharging-padding = 2
+format-discharging-foreground = ${colors.red}
+format-discharging-background = ${colors.light-gray}
+format-full = <label-full>
+format-full-padding = 2
+format-full-foreground = ${colors.dark-blue}
+format-full-background = ${colors.light-gray}
+label-charging = "⚡ %percentage%%"
+label-discharging = %percentage%%
+label-full = " FULL "
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+format-charging = <label-charging>
+format-charging-padding = 2
+format-charging-foreground = ${colors.black}
+format-charging-background = ${colors.light-gray}
+format-discharging = <label-discharging>
+format-discharging-padding = 2
+format-discharging-foreground = ${colors.red}
+format-discharging-background = ${colors.light-gray}
+format-full = <label-full>
+format-full-padding = 2
+format-full-foreground = ${colors.dark-blue}
+format-full-background = ${colors.light-gray}
+label-charging = "⚡ %percentage%%"
+label-discharging = %percentage%%
+label-full = " FULL "
+
+[settings]
+screenchange-reload = true
+
+; vim:ft=dosini
