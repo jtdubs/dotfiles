@@ -127,7 +127,7 @@ nnoremap k gk
 " Lightline config
 "
 let g:lightline = {
-  \   'colorscheme': 'seti',
+  \   'colorscheme': 'base16auto',
   \   'active': {
   \     'left':  [
   \                [ 'mode', 'paste' ],

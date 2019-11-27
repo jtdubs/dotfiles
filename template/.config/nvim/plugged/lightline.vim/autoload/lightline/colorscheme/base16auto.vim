@@ -5,41 +5,41 @@
 " Last Change: 2015-07-27 06:01
 " =============================================================================
 
-let s:red = '#df0000'
-let s:green = '#008700'
-let s:blue = '#00afaf'
+let s:red = '##base08##'
+let s:green = '##base01##'
+let s:blue = '##base0c##'
 
-let s:pink = '#afdf00'
-let s:olive = '#dfaf5f'
-let s:navy = '#df875f'
+let s:pink = '##base0B##'
+let s:olive = '##base0A##'
+let s:navy = '##base09##'
 
-let s:orange = '#d75f00'
-let s:purple = '#8959a8'
-let s:aqua = '#3e999f'
+let s:orange = '##base09##'
+let s:purple = '##base0E##'
+let s:aqua = '##base04##'
 
 " Basics:
-let s:foreground = '#d0d0d0'
-let s:background = '#41535b'
-let s:window = '#efefef'
-let s:status = '#c6c6c6'
-let s:error = '#5f0000'
+let s:foreground = '##base05##'
+let s:background = '##base03##'
+let s:window = '##base06##'
+let s:status = '##base05##'
+let s:error = '##base08##'
 
 " Tabline:
-let s:tabline_bg = '#3a3a3a'
-let s:tabline_active_fg = '#1c1c1c'
-let s:tabline_active_bg = '#00afaf'
-let s:tabline_inactive_fg = '#c6c6c6'
-let s:tabline_inactive_bg = '#585858'
+let s:tabline_bg = '##base03##'
+let s:tabline_active_fg = '##base00##'
+let s:tabline_active_bg = '##base04##'
+let s:tabline_inactive_fg = '##base05##'
+let s:tabline_inactive_bg = '##base03##'
 
 " Statusline:
-let s:statusline_active_fg = '#1c1c1c'
-let s:statusline_active_bg = '#3b758c'
-let s:statusline_inactive_fg = '#c6c6c6'
-let s:statusline_inactive_bg = '#41535b'
+let s:statusline_active_fg = '##base00##'
+let s:statusline_active_bg = '##base02##'
+let s:statusline_inactive_fg = '##base05##'
+let s:statusline_inactive_bg = '##base03##'
 
 " Visual:
-let s:visual_fg = '#000000'
-let s:visual_bg = '#8787af'
+let s:visual_fg = '##base00##'
+let s:visual_bg = '##base0E##'
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [ [ s:foreground, s:background ], [ s:statusline_active_fg, s:status ], [ s:statusline_active_fg, s:statusline_active_bg ] ]

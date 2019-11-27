@@ -493,34 +493,34 @@ live_config_reload: true
 colors:
   # Default colors
   primary:
-    background: '0x151718'
-    foreground: '0xd6d6d6'
+    background: '#xbase00##'
+    foreground: '#xbase05##'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x151718'
-    cursor: '0xd6d6d6'
+    text: '#xbase00##'
+    cursor: '#xbase05##'
 
   # Normal colors
   normal:
-    black:   '0x151718'
-    red:     '0xcd3f45'
-    green:   '0x9fca56'
-    yellow:  '0xe6cd69'
-    blue:    '0x55b5db'
-    magenta: '0xa074c4'
-    cyan:    '0x55dbbe'
-    white:   '0xd6d6d6'
+    black:   '#xbase00##'
+    red:     '#xbase08##'
+    green:   '#xbase0B##'
+    yellow:  '#xbase0A##'
+    blue:    '#xbase0D##'
+    magenta: '#xbase0E##'
+    cyan:    '#xbase0C##'
+    white:   '#xbase05##'
 
   # Bright colors
   bright:
-    black:   '0x41535b'
-    red:     '0xdb7b55'
-    green:   '0x282a2b'
-    yellow:  '0x3b758c'
-    blue:    '0x43a5d5'
-    magenta: '0xeeeeee'
-    cyan:    '0x8a553f'
-    white:   '0xffffff'
+    black:   '#xbase03##'
+    red:     '#xbase09##'
+    green:   '#xbase00##'
+    yellow:  '#xbase02##'
+    blue:    '#xbase04##'
+    magenta: '#xbase06##'
+    cyan:    '#xbase0F##'
+    white:   '#xbase07##'
 
 draw_bold_text_with_bright_colors: false

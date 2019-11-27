@@ -1,11 +1,11 @@
 [colors]
 black = #151718
-light-gray = #d6d6d6
-light-blue = #55b5db
-dark-blue = #3b758c
-medium-gray = #41535b
-orange = #db7b55
-red = #cd3f45
+light-gray = #D6D6D6
+light-blue = #55B5DB
+dark-blue = #3B758C
+medium-gray = #41535B
+orange = #DB7B55
+red = #CD3F45
 
 [bar/main]
 monitor-strict = false

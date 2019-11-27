@@ -27,6 +27,7 @@ def extract_template(themed, template, theme):
             contents = i.read()
             for k, v in theme.items():
                 contents = contents.replace("#"+v, "##"+k+"##")
+                contents = contents.replace("0x"+v, "#x"+k+"##")
             o.write(contents)
     mod_time = os.path.getmtime(themed)
     os.utime(template, (mod_time, mod_time))
@@ -37,6 +38,7 @@ def apply_theme(template, themed, theme):
             contents = i.read()
             for k, v in theme.items():
                 contents = contents.replace("##"+k+"##", "#"+v)
+                contents = contents.replace("#x"+k+"##", "0x"+v)
             o.write(contents)
 
 def main():
@@ -53,7 +55,7 @@ def main():
     # NOTE: If theme.yml is newer than the template/ file, that counts as updated
     for template_file in list_files("template"):
         _, themed_file, _ = to_locations(template_file)
-        if not os.path.exists(themed_file) or newer_than(template_file, themed_file) or newer_than("theme.yml", template_file):
+        if not os.path.exists(themed_file) or newer_than(template_file, themed_file) or newer_than("theme.yml", themed_file):
             print("Applying theme to", template_file, "...")
             apply_theme(template_file, themed_file, theme)
 
@@ -61,12 +63,12 @@ def main():
     for themed_file in list_files("home"):
         template_file, _, home_file = to_locations(themed_file)
         if not os.path.exists(home_file) or newer_than(themed_file, home_file):
-            print("Pushing ", themed_file, "...")
+            print("Pushing", themed_file, "...")
             shutil.copy2(themed_file, home_file)
         elif newer_than(home_file, themed_file):
-            print("Pulling ", home_file, "...")
+            print("Pulling", home_file, "...")
             shutil.copy2(home_file, themed_file)
-            print("Extracting template for ", themed_file, "...")
+            print("Extracting template for", themed_file, "...")
             extract_template(themed_file, template_file, theme)
 
 if __name__ == "__main__":

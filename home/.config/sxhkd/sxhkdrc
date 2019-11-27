@@ -9,9 +9,9 @@ super + r
 	dmenu_run \
 		-l 8 \
 		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
-		-nb "#3b758c" \
+		-nb "#3B758C" \
 		-nf "#151718" \
-		-sb "#55b5db" \
+		-sb "#55B5DB" \
 		-sf "#151718"
 
 super + Escape
