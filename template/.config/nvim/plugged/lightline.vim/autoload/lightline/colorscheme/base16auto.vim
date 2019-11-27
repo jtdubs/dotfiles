@@ -18,9 +18,9 @@ let s:purple = '##base0E##'
 let s:aqua = '##base04##'
 
 " Basics:
-let s:foreground = '##base05##'
+let s:foreground = '##base07##'
 let s:background = '##base03##'
-let s:window = '##base06##'
+let s:window = '##base07##'
 let s:status = '##base05##'
 let s:error = '##base08##'
 
@@ -48,7 +48,7 @@ let s:p.normal.middle = [ [ s:statusline_active_fg, s:statusline_active_bg ]]
 let s:p.inactive.right = [ [ s:foreground, s:background ], [ s:foreground, s:background ] ]
 let s:p.inactive.left = [ [ s:foreground, s:background ], [ s:foreground, s:background ] ]
 let s:p.inactive.middle = [ [ s:foreground, s:background ], ]
-let s:p.insert.left = [ [ s:blue, s:background], [ s:statusline_active_fg, s:status ], [ s:statusline_active_fg, s:statusline_active_bg ] ]
+let s:p.insert.left = [ [ s:foreground, s:background], [ s:statusline_active_fg, s:status ], [ s:statusline_active_fg, s:statusline_active_bg ] ]
 let s:p.replace.left = [ [ s:background, s:pink ], [s:statusline_active_fg, s:status ], [ s:statusline_active_fg, s:statusline_active_bg ] ]
 let s:p.visual.left = [ [ s:visual_fg, s:visual_bg ], [s:statusline_active_fg, s:status ], [ s:statusline_active_fg, s:statusline_active_bg ] ]
 let s:p.tabline.left = [ [s:tabline_inactive_fg, s:tabline_inactive_bg ]]

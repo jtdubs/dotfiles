@@ -9,7 +9,7 @@ def list_files(path):
 
 def get_theme():
     with open("theme.yml", "r") as f:
-        return { k: v for k, v in yaml.safe_load(f.read()).items() if "base" in k }
+        return { k: str(v) for k, v in yaml.safe_load(f.read()).items() if "base" in k }
 
 def to_locations(path):
     rel_path = os.sep.join(path.split(os.sep)[1:])

@@ -5,38 +5,38 @@
 " Auto UI scheme by 
 
 " GUI color definitions
-let s:gui00        = "151718"
-let g:base16_gui00 = "151718"
-let s:gui01        = "282A2B"
-let g:base16_gui01 = "282A2B"
-let s:gui02        = "3B758C"
-let g:base16_gui02 = "3B758C"
-let s:gui03        = "41535B"
-let g:base16_gui03 = "41535B"
-let s:gui04        = "43A5D5"
-let g:base16_gui04 = "43A5D5"
-let s:gui05        = "D6D6D6"
-let g:base16_gui05 = "D6D6D6"
-let s:gui06        = "EEEEEE"
-let g:base16_gui06 = "EEEEEE"
-let s:gui07        = "FFFFFF"
-let g:base16_gui07 = "FFFFFF"
-let s:gui08        = "CD3F45"
-let g:base16_gui08 = "CD3F45"
-let s:gui09        = "DB7B55"
-let g:base16_gui09 = "DB7B55"
-let s:gui0A        = "E6CD69"
-let g:base16_gui0A = "E6CD69"
-let s:gui0B        = "9FCA56"
-let g:base16_gui0B = "9FCA56"
-let s:gui0C        = "55DBBE"
-let g:base16_gui0C = "55DBBE"
-let s:gui0D        = "55B5DB"
-let g:base16_gui0D = "55B5DB"
-let s:gui0E        = "A074C4"
-let g:base16_gui0E = "A074C4"
-let s:gui0F        = "8A553F"
-let g:base16_gui0F = "8A553F"
+let s:gui00        = "1F1F1F"
+let g:base16_gui00 = "1F1F1F"
+let s:gui01        = "#009641"
+let g:base16_gui01 = "#009641"
+let s:gui02        = "055B85"
+let g:base16_gui02 = "055B85"
+let s:gui03        = "4B4B4B"
+let g:base16_gui03 = "4B4B4B"
+let s:gui04        = "2291C7"
+let g:base16_gui04 = "2291C7"
+let s:gui05        = "6E6E6E"
+let g:base16_gui05 = "6E6E6E"
+let s:gui06        = "363636"
+let g:base16_gui06 = "363636"
+let s:gui07        = "C1C1C1"
+let g:base16_gui07 = "C1C1C1"
+let s:gui08        = "FF4F21"
+let g:base16_gui08 = "FF4F21"
+let s:gui09        = "FF9478"
+let g:base16_gui09 = "FF9478"
+let s:gui0A        = "FF9821"
+let g:base16_gui0A = "FF9821"
+let s:gui0B        = "6BE5A0"
+let g:base16_gui0B = "6BE5A0"
+let s:gui0C        = "1BD36B"
+let g:base16_gui0C = "1BD36B"
+let s:gui0D        = "6EB9DE"
+let g:base16_gui0D = "6EB9DE"
+let s:gui0E        = "E81E76"
+let g:base16_gui0E = "E81E76"
+let s:gui0F        = "D22C00"
+let g:base16_gui0F = "D22C00"
 
 " Terminal color definitions
 let s:cterm00        = "00"
@@ -89,22 +89,22 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#151718"
-  let g:terminal_color_1 =  "#CD3F45"
-  let g:terminal_color_2 =  "#9FCA56"
-  let g:terminal_color_3 =  "#E6CD69"
-  let g:terminal_color_4 =  "#55B5DB"
-  let g:terminal_color_5 =  "#A074C4"
-  let g:terminal_color_6 =  "#55DBBE"
-  let g:terminal_color_7 =  "#D6D6D6"
-  let g:terminal_color_8 =  "#41535B"
-  let g:terminal_color_9 =  "#CD3F45"
-  let g:terminal_color_10 = "#9FCA56"
-  let g:terminal_color_11 = "#E6CD69"
-  let g:terminal_color_12 = "#55B5DB"
-  let g:terminal_color_13 = "#A074C4"
-  let g:terminal_color_14 = "#55DBBE"
-  let g:terminal_color_15 = "#FFFFFF"
+  let g:terminal_color_0 =  "#1F1F1F"
+  let g:terminal_color_1 =  "#FF4F21"
+  let g:terminal_color_2 =  "#6BE5A0"
+  let g:terminal_color_3 =  "#FF9821"
+  let g:terminal_color_4 =  "#6EB9DE"
+  let g:terminal_color_5 =  "#E81E76"
+  let g:terminal_color_6 =  "#1BD36B"
+  let g:terminal_color_7 =  "#6E6E6E"
+  let g:terminal_color_8 =  "#4B4B4B"
+  let g:terminal_color_9 =  "#FF4F21"
+  let g:terminal_color_10 = "#6BE5A0"
+  let g:terminal_color_11 = "#FF9821"
+  let g:terminal_color_12 = "#6EB9DE"
+  let g:terminal_color_13 = "#E81E76"
+  let g:terminal_color_14 = "#1BD36B"
+  let g:terminal_color_15 = "#C1C1C1"
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_5
   if &background == "light"
@@ -113,22 +113,22 @@ if has("nvim")
   endif
 elseif has("terminal")
   let g:terminal_ansi_colors = [
-        \ "#151718",
-        \ "#CD3F45",
-        \ "#9FCA56",
-        \ "#E6CD69",
-        \ "#55B5DB",
-        \ "#A074C4",
-        \ "#55DBBE",
-        \ "#D6D6D6",
-        \ "#41535B",
-        \ "#CD3F45",
-        \ "#9FCA56",
-        \ "#E6CD69",
-        \ "#55B5DB",
-        \ "#A074C4",
-        \ "#55DBBE",
-        \ "#FFFFFF",
+        \ "#1F1F1F",
+        \ "#FF4F21",
+        \ "#6BE5A0",
+        \ "#FF9821",
+        \ "#6EB9DE",
+        \ "#E81E76",
+        \ "#1BD36B",
+        \ "#6E6E6E",
+        \ "#4B4B4B",
+        \ "#FF4F21",
+        \ "#6BE5A0",
+        \ "#FF9821",
+        \ "#6EB9DE",
+        \ "#E81E76",
+        \ "#1BD36B",
+        \ "#C1C1C1",
         \ ]
 endif
 
@@ -169,7 +169,7 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
 endfun
 
 " Vim editor colors
-call <sid>hi("Normal",        s:gui05, s:gui00, s:cterm05, s:cterm00, "", "")
+call <sid>hi("Normal",        s:gui07, s:gui00, s:cterm05, s:cterm00, "", "")
 call <sid>hi("Bold",          "", "", "", "", "bold", "")
 call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")
@@ -204,12 +204,12 @@ call <sid>hi("StatusLine",    s:gui04, s:gui02, s:cterm04, s:cterm02, "none", ""
 call <sid>hi("StatusLineNC",  s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("VertSplit",     s:gui02, s:gui02, s:cterm02, s:cterm02, "none", "")
 call <sid>hi("ColorColumn",   "", s:gui01, "", s:cterm01, "none", "")
-call <sid>hi("CursorColumn",  "", s:gui01, "", s:cterm01, "none", "")
-call <sid>hi("CursorLine",    "", s:gui01, "", s:cterm01, "none", "")
+call <sid>hi("CursorColumn",  "", s:gui06, "", s:cterm01, "none", "")
+call <sid>hi("CursorLine",    "", s:gui06, "", s:cterm01, "none", "")
 call <sid>hi("CursorLineNr",  s:gui04, s:gui01, s:cterm04, s:cterm01, "", "")
 call <sid>hi("QuickFixLine",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", "")
-call <sid>hi("PMenuSel",      s:gui01, s:gui05, s:cterm01, s:cterm05, "", "")
+call <sid>hi("PMenuSel",      s:gui01, s:gui07, s:cterm01, s:cterm05, "", "")
 call <sid>hi("TabLine",       s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineFill",   s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none", "")

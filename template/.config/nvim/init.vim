@@ -101,6 +101,7 @@ set updatetime=300              " Faster disk writes
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
 nnoremap <silent> <leader>tl :set invlist<cr>:set list?<cr>
 nnoremap <silent> <leader>tn :set invnumber<cr>:set invrelativenumber<cr>
+nnoremap <silent> <leader>tc :set invcursorline<cr>:set invcursorcolumn<cr>
 nnoremap <silent> <leader>tw :set invwrap<cr>:set wrap?<cr>
 nnoremap <silent> <leader>ve :e ~/.vimrc<cr>
 nnoremap <silent> <leader>vs :source ~/.local/nvim/init.vim<cr>

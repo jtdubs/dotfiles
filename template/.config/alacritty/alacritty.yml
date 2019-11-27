@@ -494,33 +494,33 @@ colors:
   # Default colors
   primary:
     background: '#xbase00##'
-    foreground: '#xbase05##'
+    foreground: '#xbase07##'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '#xbase00##'
-    cursor: '#xbase05##'
+    cursor: '#xbase07##'
 
   # Normal colors
   normal:
     black:   '#xbase00##'
-    red:     '#xbase08##'
-    green:   '#xbase0B##'
+    red:     '#xbase0F##'
+    green:   '#xbase0C##'
     yellow:  '#xbase0A##'
-    blue:    '#xbase0D##'
+    blue:    '#xbase04##'
     magenta: '#xbase0E##'
     cyan:    '#xbase0C##'
-    white:   '#xbase05##'
+    white:   '#xbase07##'
 
   # Bright colors
   bright:
     black:   '#xbase03##'
-    red:     '#xbase09##'
-    green:   '#xbase00##'
-    yellow:  '#xbase02##'
-    blue:    '#xbase04##'
-    magenta: '#xbase06##'
-    cyan:    '#xbase0F##'
+    red:     '#xbase08##'
+    green:   '#xbase0B##'
+    yellow:  '#xbase0A##'
+    blue:    '#xbase0D##'
+    magenta: '#xbase09##'
+    cyan:    '#xbase0B##'
     white:   '#xbase07##'
 
 draw_bold_text_with_bright_colors: false

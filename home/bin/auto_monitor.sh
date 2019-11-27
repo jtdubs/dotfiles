@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while true
+for i in 1 2 3 4 5
 do
     if [ x"$(autorandr --detected)" == x"$(autorandr --current)" ]
     then

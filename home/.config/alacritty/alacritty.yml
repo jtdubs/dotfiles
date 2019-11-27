@@ -493,34 +493,34 @@ live_config_reload: true
 colors:
   # Default colors
   primary:
-    background: '0x151718'
-    foreground: '0xD6D6D6'
+    background: '0x1F1F1F'
+    foreground: '0xC1C1C1'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x151718'
-    cursor: '0xD6D6D6'
+    text: '0x1F1F1F'
+    cursor: '0xC1C1C1'
 
   # Normal colors
   normal:
-    black:   '0x151718'
-    red:     '0xCD3F45'
-    green:   '0x9FCA56'
-    yellow:  '0xE6CD69'
-    blue:    '0x55B5DB'
-    magenta: '0xA074C4'
-    cyan:    '0x55DBBE'
-    white:   '0xD6D6D6'
+    black:   '0x1F1F1F'
+    red:     '0xD22C00'
+    green:   '0x1BD36B'
+    yellow:  '0xFF9821'
+    blue:    '0x2291C7'
+    magenta: '0xE81E76'
+    cyan:    '0x1BD36B'
+    white:   '0xC1C1C1'
 
   # Bright colors
   bright:
-    black:   '0x41535B'
-    red:     '0xDB7B55'
-    green:   '0x151718'
-    yellow:  '0x3B758C'
-    blue:    '0x43A5D5'
-    magenta: '0xEEEEEE'
-    cyan:    '0x8A553F'
-    white:   '0xFFFFFF'
+    black:   '0x4B4B4B'
+    red:     '0xFF4F21'
+    green:   '0x6BE5A0'
+    yellow:  '0xFF9821'
+    blue:    '0x6EB9DE'
+    magenta: '0xFF9478'
+    cyan:    '0x6BE5A0'
+    white:   '0xC1C1C1'
 
 draw_bold_text_with_bright_colors: false

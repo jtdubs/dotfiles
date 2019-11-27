@@ -66,7 +66,7 @@ tmux_conf_theme_mode_bg='##base04##'                       # yellow
 tmux_conf_theme_mode_attr='none'
 
 # status line style
-tmux_conf_theme_status_fg='##base05##'                     # light gray
+tmux_conf_theme_status_fg='##base07##'                     # light gray
 tmux_conf_theme_status_bg='##base02##'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
@@ -152,12 +152,12 @@ tmux_conf_theme_status_left=' ❐ #S '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}| #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='##base05##,##base00##,##base00##'  # black, white , white
-tmux_conf_theme_status_left_bg='##base03##,##base06##,##base02##'  # yellow, pink, white blue
+tmux_conf_theme_status_left_fg='##base07##,##base00##,##base00##'  # black, white , white
+tmux_conf_theme_status_left_bg='##base03##,##base07##,##base02##'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='none,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='##base00##,##base00##,##base05##' # light gray, white, black
+tmux_conf_theme_status_right_fg='##base00##,##base00##,##base07##' # light gray, white, black
 tmux_conf_theme_status_right_bg='##base02##,##base05##,##base03##' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,none'
 
