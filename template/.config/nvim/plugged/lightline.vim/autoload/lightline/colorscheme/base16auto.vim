@@ -57,4 +57,4 @@ let s:p.tabline.middle = [ [s:tabline_bg, s:tabline_bg]]
 let s:p.tabline.right = copy(s:p.normal.right)
 let s:p.normal.error = [ [ s:background, s:error ] ]
 
-let g:lightline#colorscheme#seti#palette = lightline#colorscheme#fill(s:p)
+let g:lightline#colorscheme#base16auto#palette = lightline#colorscheme#fill(s:p)
