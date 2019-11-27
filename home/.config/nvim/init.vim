@@ -35,7 +35,7 @@ call plug#end()
 "
 " Set Colorscheme
 "
-colorscheme base16-seti
+colorscheme base16-auto
 
 
 "

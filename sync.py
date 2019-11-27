@@ -28,6 +28,7 @@ def extract_template(themed, template, theme):
             for k, v in theme.items():
                 contents = contents.replace("#"+v, "##"+k+"##")
                 contents = contents.replace("0x"+v, "#x"+k+"##")
+                contents = contents.replace(v, "#b"+k+"##")
             o.write(contents)
     mod_time = os.path.getmtime(themed)
     os.utime(template, (mod_time, mod_time))
@@ -39,6 +40,7 @@ def apply_theme(template, themed, theme):
             for k, v in theme.items():
                 contents = contents.replace("##"+k+"##", "#"+v)
                 contents = contents.replace("#x"+k+"##", "0x"+v)
+                contents = contents.replace("#b"+k+"##", v)
             o.write(contents)
 
 def main():

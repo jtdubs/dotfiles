@@ -19,7 +19,7 @@ Rxvt.secondaryWheel: 1
 ! Scheme: 
 
 #define base00 #151718
-#define base01 #8EC43D
+#define base01 #282A2B
 #define base02 #3B758C
 #define base03 #41535B
 #define base04 #43A5D5
