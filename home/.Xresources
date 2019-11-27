@@ -18,22 +18,22 @@ Rxvt.secondaryWheel: 1
 ! Base16 Seti UI
 ! Scheme: 
 
-#define theme00 #1F1F1F
-#define theme01 #363636
-#define theme02 #4B4B4B
-#define theme03 #6E6E6E
-#define theme04 #C1C1C1
-#define theme05 #D22C00
-#define theme06 #FF4F21
-#define theme07 #FF9478
-#define theme08 #FF9821
-#define theme09 #009641
-#define theme0A #1BD36B
-#define theme0B #6BE5A0
-#define theme0C #055B85
-#define theme0D #2291C7
-#define theme0E #6EB9DE
-#define theme0F #E81E76
+#define theme00 #181818
+#define theme01 #303030
+#define theme02 #505050
+#define theme03 #707070
+#define theme04 #C0C0C0
+#define theme05 #E8E8E8
+#define theme06 #D1421C
+#define theme07 #FF896A
+#define theme08 #FFD66A
+#define theme09 #14954C
+#define theme0A #4FBE7F
+#define theme0B #ABEBC7
+#define theme0C #176184
+#define theme0D #4C8CAC
+#define theme0E #AAD2E5
+#define theme0F #D17D1C
 
 *foreground:   theme03
 #ifdef background_opacity

@@ -1,20 +1,20 @@
 [colors]
-theme00 = #1F1F1F
-theme01 = #363636
-theme02 = #4B4B4B
-theme03 = #6E6E6E
-theme04 = #C1C1C1
-theme05 = #D22C00
-theme06 = #FF4F21
-theme07 = #FF9478
-theme08 = #FF9821
-theme09 = #009641
-theme0A = #1BD36B
-theme0B = #6BE5A0
-theme0C = #055B85
-theme0D = #2291C7
-theme0E = #6EB9DE
-theme0F = #E81E76
+theme00 = #181818
+theme01 = #303030
+theme02 = #505050
+theme03 = #707070
+theme04 = #C0C0C0
+theme05 = #E8E8E8
+theme06 = #D1421C
+theme07 = #FF896A
+theme08 = #FFD66A
+theme09 = #14954C
+theme0A = #4FBE7F
+theme0B = #ABEBC7
+theme0C = #176184
+theme0D = #4C8CAC
+theme0E = #AAD2E5
+theme0F = #D17D1C
 
 [bar/main]
 monitor-strict = false
@@ -151,7 +151,7 @@ format-discharging-foreground = ${colors.theme07}
 format-discharging-background = ${colors.theme03}
 format-full = <label-full>
 format-full-padding = 2
-format-full-foreground = ${colors.theme0D}
+format-full-foreground = ${colors.theme00}
 format-full-background = ${colors.theme03}
 label-charging = "⚡ %percentage%%"
 label-discharging = %percentage%%
