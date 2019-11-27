@@ -1,6 +1,13 @@
 #!/bin/bash
 
-pgrep launch-polybar | xargs -n1 kill
+for PID in $(pgrep launch-polybar)
+do
+    if [ $PID -ne $$ ]
+    then
+        kill $PID
+    fi
+done
+
 killall -q polybar
 
 while true
