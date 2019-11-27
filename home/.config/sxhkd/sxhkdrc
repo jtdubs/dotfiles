@@ -11,7 +11,7 @@ super + r
 		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
 		-nb "#055B85" \
 		-nf "#1F1F1F" \
-		-sb "#6EB9DE" \
+		-sb "#2291C7" \
 		-sf "#1F1F1F"
 
 super + Escape

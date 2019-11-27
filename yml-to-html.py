@@ -9,8 +9,8 @@ def main(path):
         print("""<html><body>""")
         y = yaml.safe_load(yml)
         for k in y.keys():
-            if "base" in k:
-                c = y[k].upper()
+            if "theme" in k:
+                c = str(y[k]).upper()
                 r, g, b = int(c[0:2], 16), int(c[2:4], 16), int(c[4:6], 16)
                 d = math.sqrt(r*r + g*g + b*b)
                 if d < 200:

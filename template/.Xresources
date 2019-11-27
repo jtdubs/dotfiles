@@ -18,45 +18,44 @@ Rxvt.secondaryWheel: 1
 ! Base16 Seti UI
 ! Scheme: 
 
-#define base00 ##base00##
-#define base01 ##base01##
-#define base02 ##base02##
-#define base03 ##base03##
-#define base04 ##base04##
-#define base05 ##base05##
-#define base06 ##base06##
-#define base07 ##base07##
-#define base08 ##base08##
-#define base09 ##base09##
-#define base0A ##base0A##
-#define base0B ##base0B##
-#define base0C ##base0C##
-#define base0D ##base0D##
-#define base0E ##base0E##
-#define base0F ##base0F##
+#define theme00 ##theme00##
+#define theme01 ##theme01##
+#define theme02 ##theme02##
+#define theme03 ##theme03##
+#define theme04 ##theme04##
+#define theme05 ##theme05##
+#define theme06 ##theme06##
+#define theme07 ##theme07##
+#define theme08 ##theme08##
+#define theme09 ##theme09##
+#define theme0A ##theme0A##
+#define theme0B ##theme0B##
+#define theme0C ##theme0C##
+#define theme0D ##theme0D##
+#define theme0E ##theme0E##
+#define theme0F ##theme0F##
 
-*foreground:   base05
+*foreground:   theme03
 #ifdef background_opacity
-*background:   [background_opacity]base00
+*background:   [background_opacity]theme00
 #else
-*background:   base00
+*background:   theme00
 #endif
-*cursorColor:  base05
+*cursorColor:  theme03
 
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
-
-*color8:       base03
-*color9:       base09
-*color10:      base01
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
-*color15:      base07
+*color0:       theme00
+*color1:       theme06
+*color2:       theme0B
+*color3:       theme08
+*color4:       theme0E
+*color5:       theme0F
+*color6:       theme0A
+*color7:       theme03
+*color8:       theme02
+*color9:       theme07
+*color10:      theme09
+*color11:      theme0C
+*color12:      theme0D
+*color13:      theme01
+*color14:      theme05
+*color15:      theme04

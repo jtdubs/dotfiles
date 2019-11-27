@@ -35,7 +35,7 @@ tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg='##base03##'               # light blue
+tmux_conf_theme_focused_pane_bg='##theme02##'               # light blue
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -43,31 +43,31 @@ tmux_conf_theme_focused_pane_bg='##base03##'               # light blue
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border='##base03##'                   # gray
-tmux_conf_theme_pane_active_border='##base04##'            # light blue
+tmux_conf_theme_pane_border='##theme02##'                   # gray
+tmux_conf_theme_pane_active_border='##theme0D##'            # light blue
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='##base04##'                # light blue
-tmux_conf_theme_pane_active_indicator='##base04##'         # light blue
+tmux_conf_theme_pane_indicator='##theme0D##'                # light blue
+tmux_conf_theme_pane_active_indicator='##theme0D##'         # light blue
 
 # status line style
-tmux_conf_theme_message_fg='##base00##'                    # black
-tmux_conf_theme_message_bg='##base04##'                    # yellow
+tmux_conf_theme_message_fg='##theme00##'                    # black
+tmux_conf_theme_message_bg='##theme0D##'                    # yellow
 tmux_conf_theme_message_attr='none'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='##base00##'            # yellow
-tmux_conf_theme_message_command_bg='##base04##'            # black
+tmux_conf_theme_message_command_fg='##theme00##'            # yellow
+tmux_conf_theme_message_command_bg='##theme0D##'            # black
 tmux_conf_theme_message_command_attr='none'
 
 # window modes style
-tmux_conf_theme_mode_fg='##base00##'                       # black
-tmux_conf_theme_mode_bg='##base04##'                       # yellow
+tmux_conf_theme_mode_fg='##theme00##'                       # black
+tmux_conf_theme_mode_bg='##theme0D##'                       # yellow
 tmux_conf_theme_mode_attr='none'
 
 # status line style
-tmux_conf_theme_status_fg='##base07##'                     # light gray
-tmux_conf_theme_status_bg='##base02##'                     # dark gray
+tmux_conf_theme_status_fg='##theme04##'                     # light gray
+tmux_conf_theme_status_bg='##theme0C##'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -88,8 +88,8 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg='##base00##'              # light gray
-tmux_conf_theme_window_status_bg='##base02##'              # dark gray
+tmux_conf_theme_window_status_fg='##theme00##'              # light gray
+tmux_conf_theme_window_status_bg='##theme0C##'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format=' #I #W '
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
@@ -103,25 +103,25 @@ tmux_conf_theme_window_status_format=' #I #W '
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='##base00##'      # black
-tmux_conf_theme_window_status_current_bg='##base04##'      # light blue
+tmux_conf_theme_window_status_current_fg='##theme00##'      # black
+tmux_conf_theme_window_status_current_bg='##theme0D##'      # light blue
 tmux_conf_theme_window_status_current_attr='none'
 tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
 # window activity status style
-tmux_conf_theme_window_status_activity_fg='##base00##'
-tmux_conf_theme_window_status_activity_bg='##base09##'
+tmux_conf_theme_window_status_activity_fg='##theme00##'
+tmux_conf_theme_window_status_activity_bg='##theme07##'
 tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg='##base09##'         # yellow
+tmux_conf_theme_window_status_bell_fg='##theme07##'         # yellow
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink'
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='##base00##'         # light blue
+tmux_conf_theme_window_status_last_fg='##theme00##'         # light blue
 tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
@@ -152,13 +152,13 @@ tmux_conf_theme_status_left=' ❐ #S '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}| #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='##base07##,##base00##,##base00##'  # black, white , white
-tmux_conf_theme_status_left_bg='##base03##,##base07##,##base02##'  # yellow, pink, white blue
+tmux_conf_theme_status_left_fg='##theme04##,##theme00##,##theme00##'  # black, white , white
+tmux_conf_theme_status_left_bg='##theme02##,##theme04##,##theme0C##'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='none,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='##base00##,##base00##,##base07##' # light gray, white, black
-tmux_conf_theme_status_right_bg='##base02##,##base05##,##base03##' # dark gray, red, white
+tmux_conf_theme_status_right_fg='##theme00##,##theme00##,##theme04##' # light gray, white, black
+tmux_conf_theme_status_right_bg='##theme0C##,##theme03##,##theme02##' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,none'
 
 # pairing indicator

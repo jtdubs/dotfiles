@@ -493,34 +493,34 @@ live_config_reload: true
 colors:
   # Default colors
   primary:
-    background: '#xbase00##'
-    foreground: '#xbase07##'
+    background: '#xtheme00##'
+    foreground: '#xtheme04##'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#xbase00##'
-    cursor: '#xbase07##'
+    text: '#xtheme00##'
+    cursor: '#xtheme04##'
 
   # Normal colors
   normal:
-    black:   '#xbase00##'
-    red:     '#xbase0F##'
-    green:   '#xbase0C##'
-    yellow:  '#xbase0A##'
-    blue:    '#xbase04##'
-    magenta: '#xbase0E##'
-    cyan:    '#xbase0C##'
-    white:   '#xbase07##'
+    black:   '#xtheme00##'
+    red:     '#xtheme05##'
+    green:   '#xtheme0A##'
+    yellow:  '#xtheme08##'
+    blue:    '#xtheme0D##'
+    magenta: '#xtheme0F##'
+    cyan:    '#xtheme0A##'
+    white:   '#xtheme04##'
 
   # Bright colors
   bright:
-    black:   '#xbase03##'
-    red:     '#xbase08##'
-    green:   '#xbase0B##'
-    yellow:  '#xbase0A##'
-    blue:    '#xbase0D##'
-    magenta: '#xbase09##'
-    cyan:    '#xbase0B##'
-    white:   '#xbase07##'
+    black:   '#xtheme02##'
+    red:     '#xtheme06##'
+    green:   '#xtheme0B##'
+    yellow:  '#xtheme08##'
+    blue:    '#xtheme0E##'
+    magenta: '#xtheme07##'
+    cyan:    '#xtheme0B##'
+    white:   '#xtheme04##'
 
 draw_bold_text_with_bright_colors: false

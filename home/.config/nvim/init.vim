@@ -14,7 +14,6 @@ Plug 'airblade/vim-rooter'              " Auto-switch CWD to root of project
 Plug 'itchyny/lightline.vim'            " Prettier, more useful modeline
 Plug 'machakann/vim-highlightedyank'    " Show yanks briefly after a highlight
 Plug 'andymass/vim-matchup'             " Show text of matches when highlighting start/end tag
-Plug 'chriskempson/base16-vim'          " Color schemes
 
 " Magic
 Plug 'neoclide/coc.nvim',
@@ -35,7 +34,7 @@ call plug#end()
 "
 " Set Colorscheme
 "
-colorscheme base16-auto
+colorscheme custom-theme
 
 
 "

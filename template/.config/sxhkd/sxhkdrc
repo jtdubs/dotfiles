@@ -9,10 +9,10 @@ super + r
 	dmenu_run \
 		-l 8 \
 		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
-		-nb "##base02##" \
-		-nf "##base00##" \
-		-sb "##base0D##" \
-		-sf "##base00##"
+		-nb "##theme0C##" \
+		-nf "##theme00##" \
+		-sb "##theme0D##" \
+		-sf "##theme00##"
 
 super + Escape
 	pkill -USR1 -x sxhkd
