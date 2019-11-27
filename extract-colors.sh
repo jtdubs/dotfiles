@@ -7,6 +7,6 @@ do
 
     if [[ $NAME == base* ]]
     then
-        find theme/home -type f -exec perl -pi -e "s/#$RGB/##$NAME##/g" {} \;
+        find template -type f -exec perl -pi -e "s/#$RGB/##$NAME##/g" {} \;
     fi
-done < theme/theme.yml
+done < theme.yml

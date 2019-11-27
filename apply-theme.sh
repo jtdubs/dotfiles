@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -r theme/home tmp
+cp -r template tmp
 
 while read i
 do
@@ -11,7 +11,7 @@ do
     then
         find tmp -type f -exec perl -pi -e "s/##$NAME##/#$RGB/ig" {} \;
     fi
-done < theme/theme.yml
+done < theme.yml
 
 
 TMP_FILES=$(find tmp/ -type f | sed 's/^tmp\///')
