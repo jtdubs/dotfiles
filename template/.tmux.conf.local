@@ -35,7 +35,7 @@ tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg='#41535b'               # light blue
+tmux_conf_theme_focused_pane_bg='##base03##'               # light blue
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -43,7 +43,7 @@ tmux_conf_theme_focused_pane_bg='#41535b'               # light blue
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border='#444444'                   # gray
+tmux_conf_theme_pane_border='##base03##'                   # gray
 tmux_conf_theme_pane_active_border='##base04##'            # light blue
 
 # pane indicator colours
@@ -66,8 +66,8 @@ tmux_conf_theme_mode_bg='##base04##'                       # yellow
 tmux_conf_theme_mode_attr='none'
 
 # status line style
-tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='#3b758c'                     # dark gray
+tmux_conf_theme_status_fg='##base05##'                     # light gray
+tmux_conf_theme_status_bg='##base02##'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -89,7 +89,7 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg='##base00##'              # light gray
-tmux_conf_theme_window_status_bg='#3b758c'              # dark gray
+tmux_conf_theme_window_status_bg='##base02##'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format=' #I #W '
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
@@ -153,12 +153,12 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}| #{username}#{r
 
 # status left style
 tmux_conf_theme_status_left_fg='##base05##,##base00##,##base00##'  # black, white , white
-tmux_conf_theme_status_left_bg='#41535b,##base06##,#3b758c'  # yellow, pink, white blue
+tmux_conf_theme_status_left_bg='##base03##,##base06##,##base02##'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='none,none,none'
 
 # status right style
 tmux_conf_theme_status_right_fg='##base00##,##base00##,##base05##' # light gray, white, black
-tmux_conf_theme_status_right_bg='#3b758c,##base05##,#41535b' # dark gray, red, white
+tmux_conf_theme_status_right_bg='##base02##,##base05##,##base03##' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,none'
 
 # pairing indicator

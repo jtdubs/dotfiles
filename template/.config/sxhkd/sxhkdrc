@@ -9,7 +9,7 @@ super + r
 	dmenu_run \
 		-l 8 \
 		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
-		-nb "#3b758c" \
+		-nb "##base02##" \
 		-nf "##base00##" \
 		-sb "##base0D##" \
 		-sf "##base00##"

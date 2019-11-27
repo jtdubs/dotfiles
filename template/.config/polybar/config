@@ -2,10 +2,10 @@
 black = ##base00##
 light-gray = ##base05##
 light-blue = ##base0D##
-dark-blue = #3b758c
-medium-gray = #41535b
+dark-blue = ##base02##
+medium-gray = ##base03##
 orange = ##base09##
-red = #cd3f45
+red = ##base08##
 
 [bar/main]
 monitor-strict = false
