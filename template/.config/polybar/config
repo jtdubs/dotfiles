@@ -134,7 +134,7 @@ bar-volume-indicator-foreground = ${colors.theme00}
 bar-volume-fill = ─
 bar-volume-empty = ─
 bar-volume-empty-foreground = ${colors.theme00}
-control-panel = pavucontrol
+click-right = pavucontrol &
 
 [module/battery0]
 type = internal/battery

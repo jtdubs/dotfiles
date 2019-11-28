@@ -1,17 +1,18 @@
 # set screen resolution
 ~/bin/auto_monitor.sh
 
-# set colorscheme
+# compositing
+# compton &
+
+# basic config
 xsetroot -bg black
+xsetroot -cursor_name left_ptr
 xrdb -load ~/.Xresources
+numlockx on
 
-# dbus
+# startup services
 dbus-update-activation-environment --systemd DISPLAY
-
-# screensaver
 xscreensaver -nosplash &
-
-# audio
 start-pulseaudio-x11
 
 # toolbar
@@ -20,9 +21,6 @@ nm-applet &
 
 # startup apps
 alacritty -e tmux new-session -A -s main &
-
-# numlock
-numlockx on
 
 # wm
 exec bspwm 2>&1 > ~/.config/bspwm/logs
