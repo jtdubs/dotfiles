@@ -104,6 +104,7 @@ nnoremap <silent> <leader>tc :set invcursorline<cr>:set invcursorcolumn<cr>
 nnoremap <silent> <leader>tw :set invwrap<cr>:set wrap?<cr>
 nnoremap <silent> <leader>ve :e ~/.vimrc<cr>
 nnoremap <silent> <leader>vs :source ~/.local/nvim/init.vim<cr>
+nnoremap <silent> <Esc><Esc> :let @/=""<cr>
 nnoremap Y y$
 
 
