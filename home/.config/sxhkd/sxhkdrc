@@ -6,10 +6,12 @@ super + ctrl + t
 	switch_display.sh
 
 super + shift + {Return,a}
-	exec_display.sh alacritty {-e tmux new-session -A -s main,_}
+	. ~/bin/source_display.sh; \
+	alacritty {-e tmux new-session -A -s main,_}
 
 super + r
-	exec_display.sh dmenu_run \
+	. ~/bin/source_display.sh; \
+	dmenu_run \
 		-l 8 \
 		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
 		-nb "#176184" \
@@ -21,16 +23,20 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 XF86Calculator
-	exec_display.sh galculator
+	. ~/bin/source_display.sh; \
+	galculator
 
 ctrl + alt + Delete
-	exec_display.sh xscreensaver-command -lock
+	. ~/bin/source_display.sh; \
+	xscreensaver-command -lock
 
 {XF86HomePage,super + g}
-	exec_display.sh qutebrowser
+	. ~/bin/source_display.sh; \
+	qutebrowser
 
 super + c
-	exec_display.sh google-chrome
+	. ~/bin/source_display.sh; \
+	google-chrome
 
 {XF86Display,super + F7}
 	autorandr -c; \
@@ -54,24 +60,29 @@ XF86AudioMute
 
 # quit/restart bspwm
 super + shift + {q,r}
-	exec_display.sh bspc {quit,wm -r}
+	. ~/bin/source_display.sh; \
+	bspc {quit,wm -r}
 
 # close and kill windows
 super + {shift,_} + w
-	exec_display.sh bspc node -{k,c}
+	. ~/bin/source_display.sh; \
+	bspc node -{k,c}
 
 # alternate between the tiled and monocle layout
 super + space
-	exec_display.sh bspc desktop -l next
+	. ~/bin/source_display.sh; \
+	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 # TODO: what does this mean??
 super + y
-	exec_display.sh bspc node newest.marked.local -n newest.!automatic.local
+	. ~/bin/source_display.sh; \
+	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
 super + Return
-	exec_display.sh bspc node -s biggest
+	. ~/bin/source_display.sh; \
+	bspc node -s biggest
 
 
 #
@@ -80,7 +91,8 @@ super + Return
 
 # set the window state
 super + {t,shift + t,f}
-	exec_display.sh bspc node -t {tiled,pseudo_tiled,floating}
+	. ~/bin/source_display.sh; \
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 
 #
@@ -89,45 +101,55 @@ super + {t,shift + t,f}
 
 # focus or move the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	exec_display.sh bspc node -{f,s} {west,south,north,east}
+	. ~/bin/source_display.sh; \
+	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
-	exec_display.sh bspc node -f @{parent,brother,first,second}
+	. ~/bin/source_display.sh; \
+	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }n
-	exec_display.sh bspc node -f {next,prev}.local
+	. ~/bin/source_display.sh; \
+	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
-	exec_display.sh bspc desktop -f {prev,next}.local
+	. ~/bin/source_display.sh; \
+	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {Tab,grave}
-	exec_display.sh bspc {node,desktop} -f last
+	. ~/bin/source_display.sh; \
+	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
-	exec_display.sh bspc wm -h off; \
-	exec_display.sh bspc node {older,newer} -f; \
-	exec_display.sh bspc wm -h on
+	. ~/bin/source_display.sh; \
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	exec_display.sh bspc {desktop -f,node -d} '^{1-9,10}'
+	. ~/bin/source_display.sh; \
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # swap with sibling
 super + s
-	exec_display.sh bspc node @parent -R 180; \
-	exec_display.sh bspc node @brother -R 180
+	. ~/bin/source_display.sh; \
+	bspc node @parent -R 180; \
+	bspc node @brother -R 180
 
 # rotate parent
 super + shift + {Left,Right}
-	exec_display.sh bspc node @parent -R {270,90}
+	. ~/bin/source_display.sh; \
+	bspc node @parent -R {270,90}
 
 super + ctrl + shift + {h,l}
-	exec_display.sh bspc node @parent -R {270,90}
+	. ~/bin/source_display.sh; \
+	bspc node @parent -R {270,90}
 
 
 #
@@ -136,15 +158,18 @@ super + ctrl + shift + {h,l}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	exec_display.sh bspc node -p {west,south,north,east}
+	. ~/bin/source_display.sh; \
+	bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-	exec_display.sh bspc node -o 0.{1-9}
+	. ~/bin/source_display.sh; \
+	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-	exec_display.sh bspc node -p cancel
+	. ~/bin/source_display.sh; \
+	bspc node -p cancel
 
 
 #
@@ -153,20 +178,26 @@ super + ctrl + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	exec_display.sh bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
+	. ~/bin/source_display.sh; \
+	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	exec_display.sh bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
+	. ~/bin/source_display.sh; \
+	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
 
 super + e
-	exec_display.sh bspc node -B
+	. ~/bin/source_display.sh; \
+	bspc node -B
 
 super + equal
-	exec_display.sh bspc node -E
+	. ~/bin/source_display.sh; \
+	bspc node -E
 
 super + ctrl + shift + {1,2,3,4,5,6,7,8,9}
-	exec_display.sh bspc node @parent -r {0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9}
+	. ~/bin/source_display.sh; \
+	bspc node @parent -r {0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9}
 
 F11
-	exec_display.sh ~/.config/bspwm/toggle_fullscreen.sh
+	. ~/bin/source_display.sh; \
+	~/.config/bspwm/toggle_fullscreen.sh
