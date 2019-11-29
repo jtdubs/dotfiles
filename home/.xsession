@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # set screen resolution
 ~/bin/auto_monitor.sh
 
@@ -23,4 +25,4 @@ nm-applet &
 alacritty -e tmux new-session -A -s main &
 
 # wm
-exec bspwm 2>&1 > ~/.config/bspwm/logs
+exec bspwm 2>&1 > ~/.config/bspwm/logs-$DISPLAY
