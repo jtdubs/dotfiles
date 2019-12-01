@@ -9,14 +9,14 @@ let s:theme04 = "C0C0C0"
 let s:theme05 = "E8E8E8"
 let s:theme06 = "D07057"
 let s:theme07 = "FFAF9A"
-let s:theme08 = "FFE39A"
+let s:theme08 = "FFD09A"
 let s:theme09 = "3E9463"
 let s:theme0A = "6EB78E"
 let s:theme0B = "AADABF"
 let s:theme0C = "3B6C83"
 let s:theme0D = "658FA2"
-let s:theme0E = "A4C1C7"
-let s:theme0F = "D0AE57"
+let s:theme0E = "A4C1CF"
+let s:theme0F = "D09857"
 
 " Theme setup
 hi clear
