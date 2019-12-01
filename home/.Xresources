@@ -24,16 +24,16 @@ Rxvt.secondaryWheel: 1
 #define theme03 #707070
 #define theme04 #C0C0C0
 #define theme05 #E8E8E8
-#define theme06 #D1421C
-#define theme07 #FF896A
-#define theme08 #FFD66A
-#define theme09 #14954C
-#define theme0A #4FBE7F
-#define theme0B #ABEBC7
-#define theme0C #176184
-#define theme0D #4C8CAC
-#define theme0E #AAD2E5
-#define theme0F #D17D1C
+#define theme06 #D07057
+#define theme07 #FFAF9A
+#define theme08 #FFE39A
+#define theme09 #3E9463
+#define theme0A #6EB78E
+#define theme0B #AADABF
+#define theme0C #3B6C83
+#define theme0D #658FA2
+#define theme0E #A4C1C7
+#define theme0F #D0AE57
 
 *foreground:   theme03
 #ifdef background_opacity
