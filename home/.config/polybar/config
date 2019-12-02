@@ -38,7 +38,7 @@ font-0 = "Noto Sans Mono:size=12;3"
 font-1 = "Noto Sans Symbols:size=12;3"
 font-2 = "Noto Sans Symbols2:size=12;3"
 
-modules-left = date battery0 battery1 ewmh
+modules-left = date battery0 battery1 bspwm
 modules-center = xwindow
 modules-right = pulseaudio backlight
 
@@ -58,6 +58,25 @@ override-redirect = true
 margin-top = 0
 margin-bottom = 0
 
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+label-active = " %name% "
+label-active-foreground = ${colors.theme00}
+label-active-background = ${colors.theme0D}
+label-occupied = " %name% "
+label-occupied-foreground = ${colors.theme00}
+label-occupied-background = ${colors.theme0C}
+label-urgent = " %name% "
+label-urgent-foreground = ${colors.theme00}
+label-urgent-background = ${colors.theme00}
+label-empty =
+label-empty-foreground = ${colors.theme00}
+label-empty-background = ${colors.theme0C}
+# label-separator = "|"
+
 [module/ewmh]
 type = internal/xworkspaces
 pin-workspaces = false
@@ -75,6 +94,7 @@ label-urgent-background = ${colors.theme00}
 label-empty =
 label-empty-foreground = ${colors.theme00}
 label-empty-background = ${colors.theme0C}
+label-separator = "|"
 
 [module/xwindow]
 type = internal/xwindow
