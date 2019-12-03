@@ -280,5 +280,8 @@ call <sid>hi("javaOperator",     s:theme0D, "", "", "")
 " Remove functions
 delf <sid>hi
 
+" Make normal background transparent 
+hi Normal guibg=NONE
+
 " Remove color variables
 unlet s:theme00 s:theme01 s:theme02 s:theme03 s:theme04 s:theme05 s:theme06 s:theme07 s:theme08 s:theme09 s:theme0A s:theme0B s:theme0C s:theme0D s:theme0E s:theme0F

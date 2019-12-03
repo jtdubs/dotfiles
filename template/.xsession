@@ -4,10 +4,11 @@
 ~/bin/auto_monitor.sh
 
 # compositing
-# compton &
+compton --backend glx --paint-on-overlay --refresh-rate 60 --glx-no-stencil --glx-no-rebind-pixmap --glx-swap-method -1 &
 
 # basic config
-xsetroot -bg black
+feh --bg-fill /usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg
+# xsetroot -bg black
 xsetroot -cursor_name left_ptr
 xrdb -load ~/.Xresources
 numlockx on
