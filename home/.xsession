@@ -4,8 +4,7 @@
 ~/bin/auto_monitor.sh
 
 # compositing
-compton --backend glx --paint-on-overlay --refresh-rate 60 --glx-no-stencil --glx-no-rebind-pixmap --glx-swap-method -1 &
-compton --opacity-rule 95:'name *= "qutebrowser"'
+compton &
 
 # basic config
 feh --bg-fill /usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg
