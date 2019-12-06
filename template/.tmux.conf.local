@@ -44,30 +44,30 @@ tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border='##theme02##'                   # gray
-tmux_conf_theme_pane_active_border='#658FA2'            # light blue
+tmux_conf_theme_pane_active_border='##theme0D##'            # light blue
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='#658FA2'                # light blue
-tmux_conf_theme_pane_active_indicator='#658FA2'         # light blue
+tmux_conf_theme_pane_indicator='##theme0D##'                # light blue
+tmux_conf_theme_pane_active_indicator='##theme0D##'         # light blue
 
 # status line style
 tmux_conf_theme_message_fg='##theme00##'                    # black
-tmux_conf_theme_message_bg='#658FA2'                    # yellow
+tmux_conf_theme_message_bg='##theme0D##'                    # yellow
 tmux_conf_theme_message_attr='none'
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg='##theme00##'            # yellow
-tmux_conf_theme_message_command_bg='#658FA2'            # black
+tmux_conf_theme_message_command_bg='##theme0D##'            # black
 tmux_conf_theme_message_command_attr='none'
 
 # window modes style
 tmux_conf_theme_mode_fg='##theme00##'                       # black
-tmux_conf_theme_mode_bg='#658FA2'                       # yellow
+tmux_conf_theme_mode_bg='##theme0D##'                       # yellow
 tmux_conf_theme_mode_attr='none'
 
 # status line style
 tmux_conf_theme_status_fg='##theme04##'                     # light gray
-tmux_conf_theme_status_bg='#3B6C83'                     # dark gray
+tmux_conf_theme_status_bg='##theme0C##'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -89,7 +89,7 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg='##theme00##'              # light gray
-tmux_conf_theme_window_status_bg='#3B6C83'              # dark gray
+tmux_conf_theme_window_status_bg='##theme0C##'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format='#I #W'
 # tmux_conf_theme_window_status_format=' #{circled_window_index} #W '
@@ -104,7 +104,7 @@ tmux_conf_theme_window_status_format='#I #W'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg='##theme00##'      # black
-tmux_conf_theme_window_status_current_bg='#658FA2'      # light blue
+tmux_conf_theme_window_status_current_bg='##theme0D##'      # light blue
 tmux_conf_theme_window_status_current_attr='none'
 tmux_conf_theme_window_status_current_format='#I #W'
 # tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
@@ -112,11 +112,11 @@ tmux_conf_theme_window_status_current_format='#I #W'
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='##theme00##'
-tmux_conf_theme_window_status_activity_bg='#FFAF9A'
+tmux_conf_theme_window_status_activity_bg='##theme07##'
 tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg='#FFAF9A'         # yellow
+tmux_conf_theme_window_status_bell_fg='##theme07##'         # yellow
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink'
 
@@ -153,12 +153,12 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}| #{username}#{r
 
 # status left style
 tmux_conf_theme_status_left_fg='##theme04##,##theme00##,##theme00##'  # black, white , white
-tmux_conf_theme_status_left_bg='##theme02##,##theme04##,#3B6C83'  # yellow, pink, white blue
+tmux_conf_theme_status_left_bg='##theme02##,##theme04##,##theme0C##'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='none,none,none'
 
 # status right style
 tmux_conf_theme_status_right_fg='##theme00##,##theme00##,##theme04##' # light gray, white, black
-tmux_conf_theme_status_right_bg='#3B6C83,##theme03##,##theme02##' # dark gray, red, white
+tmux_conf_theme_status_right_bg='##theme0C##,##theme03##,##theme02##' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,none'
 
 # pairing indicator
@@ -191,6 +191,9 @@ tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
+
+# vi modekeys
+set -g mode-keys vi
 
 # increase history size
 set -g history-limit 10000
