@@ -192,6 +192,9 @@ tmux_conf_copy_to_os_clipboard=true
 
 # -- user customizations -------------------------------------------------------
 
+# vi modekeys
+set -g mode-keys vi
+
 # increase history size
 set -g history-limit 10000
 

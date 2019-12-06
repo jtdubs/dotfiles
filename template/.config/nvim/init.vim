@@ -18,9 +18,6 @@ Plug 'andymass/vim-matchup'             " Show text of matches when highlighting
 " Magic
 Plug 'neoclide/coc.nvim',
   \ { 'branch': 'release' }
-" Plug 'autozimu/LanguageClient-neovim',  " Client for 'language servers'
-"   \ { 'branch': 'next',
-"   \   'do':     'bash install.sh' }
 
 " Syntax support
 Plug 'cespare/vim-toml'                 " TOML support
@@ -28,6 +25,9 @@ Plug 'stephpy/vim-yaml'                 " YAML support
 Plug 'rust-lang/rust.vim'               " Rust support
 Plug 'plasticboy/vim-markdown'          " Markdown support
 Plug 'kovetskiy/sxhkd-vim'              " For BSPWM's sxhkd
+
+Plug '~/.fzf'                           " FZF
+Plug 'junegunn/fzf.vim'                 " FZF
 call plug#end()
 
 
@@ -102,7 +102,7 @@ nnoremap <silent> <leader>tl :set invlist<cr>:set list?<cr>
 nnoremap <silent> <leader>tn :set invnumber<cr>:set invrelativenumber<cr>
 nnoremap <silent> <leader>tc :set invcursorline<cr>:set invcursorcolumn<cr>
 nnoremap <silent> <leader>tw :set invwrap<cr>:set wrap?<cr>
-nnoremap <silent> <leader>ve :e ~/.vimrc<cr>
+nnoremap <silent> <leader>ve :e ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <leader>vs :source ~/.local/nvim/init.vim<cr>
 nnoremap <silent> <Esc><Esc> :let @/=""<cr>
 nnoremap Y y$
@@ -170,22 +170,47 @@ let g:lightline = {
 "
 " BufExporer config
 "
-let g:bufExplorerSortBy='name' " Sort by the buffer's name.
-nnoremap <silent> <tab> :ToggleBufExplorer<CR>
+" let g:bufExplorerSortBy='name' " Sort by the buffer's name.
+" nnoremap <silent> <tab> :ToggleBufExplorer<CR>
 
 
 "
-" LanguageClient config
+" FZF
 "
-" let g:LanguageClient_serverCommands = {
-"   \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-"   \ 'python': ['~/.local/bin/pyls']
-"   \ }
-" 
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+let g:fzf_layout = { 'down': '~40%' }
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Other mode completion
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler nonumber norelativenumber
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler number relativenumber
+
+nnoremap <silent> <leader>fo :Files<CR>
+nnoremap <silent> <tab> :Buffers<CR>
 
 
 "
