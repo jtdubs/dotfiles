@@ -22,6 +22,7 @@ def newer_than(path1, path2):
     return os.path.getmtime(path1) > os.path.getmtime(path2)
 
 def extract_template(themed, template, theme):
+    shutil._ensure_directory(template)
     with open(themed, "r") as i:
         with open(template, "w") as o:
             contents = i.read()
@@ -34,6 +35,7 @@ def extract_template(themed, template, theme):
     os.utime(template, (mod_time, mod_time))
 
 def apply_theme(template, themed, theme):
+    shutil._ensure_directory(themed)
     with open(template, "r") as i:
         with open(themed, "w") as o:
             contents = i.read()
@@ -66,10 +68,12 @@ def main():
         template_file, _, home_file = to_locations(themed_file)
         if not os.path.exists(home_file) or newer_than(themed_file, home_file):
             print("Pushing", themed_file, "...")
+            shutil._ensure_directory(home_file)
             shutil.copy2(themed_file, home_file)
         elif newer_than(home_file, themed_file):
             print("Pulling", home_file, "...")
             shutil.copy2(home_file, themed_file)
+            shutil._ensure_directory(home_file)
             print("Extracting template for", themed_file, "...")
             extract_template(themed_file, template_file, theme)
 

@@ -109,7 +109,7 @@ c.colors.tabs.selected.even.fg = base00
 c.colors.tabs.selected.even.bg = base0D
 
 # Background color for webpages if unset (or empty to use the theme's
-c.colors.webpage.bg = base00
+# c.colors.webpage.bg = base00
 
 # Default pages
 c.url.default_page = "https://duckduckgo.com/"
