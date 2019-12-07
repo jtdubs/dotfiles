@@ -1,0 +1,45 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR FZF_CD_COMMAND:fd\x20\x2d\x2dtype\x20d\x20\x2e\x20\x24dir
+SETUVAR FZF_CD_WITH_HIDDEN_COMMAND:fd\x20\x2d\x2dtype\x20d\x20\x2d\x2dhidden\x20\x2e\x20\x24dir
+SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
+SETUVAR FZF_FIND_FILE_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2e\x20\x24dir
+SETUVAR FZF_LEGACY_KEYBINDINGS:0
+SETUVAR FZF_OPEN_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2e\x20\x24dir
+SETUVAR FZF_PREVIEW_DIR_CMD:ls
+SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
+SETUVAR FZF_TMUX_HEIGHT:40\x25
+SETUVAR --export VISUAL:nvim
+SETUVAR __fish_init_2_39_8:\x1d
+SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR __fish_init_3_x:\x1d
+SETUVAR fish_color_autosuggestion:#btheme02##
+SETUVAR fish_color_cancel:normal
+SETUVAR fish_color_command:#btheme0D##
+SETUVAR fish_color_comment:#btheme02##
+SETUVAR fish_color_cwd:#btheme0C##
+SETUVAR fish_color_cwd_root:#btheme0C##
+SETUVAR fish_color_end:#btheme0F##
+SETUVAR fish_color_error:#btheme06##
+SETUVAR fish_color_escape:#btheme08##
+SETUVAR fish_color_history_current:normal
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_match:normal
+SETUVAR fish_color_normal:#btheme05##
+SETUVAR fish_color_operator:#btheme08##
+SETUVAR fish_color_param:#btheme08##
+SETUVAR fish_color_quote:#btheme0B##
+SETUVAR fish_color_redirection:#btheme07##
+SETUVAR fish_color_search_match:A4C1C7
+SETUVAR fish_color_selection:#btheme04##
+SETUVAR fish_color_status:#btheme06##
+SETUVAR fish_color_user:#btheme0A##
+SETUVAR fish_color_valid_path:normal
+SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/jtdubs/\x2efzf/bin
