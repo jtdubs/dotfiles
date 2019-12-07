@@ -214,3 +214,5 @@ set -g status-position top
 # change split key to |
 unbind _
 bind | split-window -h
+
+set-option -g default-shell /usr/bin/fish
