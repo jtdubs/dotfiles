@@ -42,7 +42,7 @@ super + c
 	autorandr -c; \
 	sleep 1; \
 	bspc desktop any -m primary; \
-	bspc monitor -d 1 2 3 4 5 6 7 8 9
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 XF86MonBrightness{Down,Up}
 	xbacklight {-dec,-inc} 10%
@@ -119,6 +119,11 @@ super + bracket{left,right}
 	. ~/bin/source_display.sh; \
 	bspc desktop -f {prev,next}.local
 
+# focus the next/previous occupied desktop in the current monitor
+super + shift + bracket{left,right}
+	. ~/bin/source_display.sh; \
+	bspc desktop -f {prev,next}.local.occupied
+
 # focus the last node/desktop
 super + {Tab,grave}
 	. ~/bin/source_display.sh; \
@@ -134,7 +139,7 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	. ~/bin/source_display.sh; \
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} '^{1-9,0}'
 
 # swap with sibling
 super + s

@@ -1,11 +1,11 @@
 #! /bin/sh
 
-# if [ "$DISPLAY" == ":0" -o -z "$DISPLAY" ]
-# then
-sxhkd 2>&1 > ~/.config/sxhkd/logs-$DISPLAY &
-# fi
+if [ "$DISPLAY" == ":0" -o -z "$DISPLAY" ]
+then
+    sxhkd 2>&1 > ~/.config/sxhkd/logs-$DISPLAY &
+fi
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 bspc config border_width                2
 bspc config window_gap                  8
