@@ -8,4 +8,5 @@ else
     echo Auto-detecting monitor setup...
     autorandr -c
     sleep 2
+    feh --auto-zoom --bg-fill ~/.local/share/backgrounds/hardy_blue.png
 fi

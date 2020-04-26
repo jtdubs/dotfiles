@@ -7,7 +7,7 @@
 compton &
 
 # basic config
-feh --bg-fill /usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg
+feh --auto-zoom --bg-fill ~/.local/share/backgrounds/hardy_blue.png
 # xsetroot -bg black
 xsetroot -cursor_name left_ptr
 xrdb -load ~/.Xresources
@@ -23,7 +23,7 @@ nm-applet &
 ~/.config/polybar/launch-polybar.sh &
 
 # startup apps
-alacritty -e tmux new-session -A -s main &
+# alacritty -e tmux new-session -A -s main &
 
 # wm
 exec bspwm 2>&1 > ~/.config/bspwm/logs-$DISPLAY

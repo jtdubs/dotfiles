@@ -11,9 +11,11 @@ SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export VISUAL:nvim
+SETUVAR _JAVA_AWT_WM_NONREPARENTING:1
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:#btheme02##
 SETUVAR fish_color_cancel:normal
 SETUVAR fish_color_command:#btheme0D##
@@ -25,6 +27,7 @@ SETUVAR fish_color_error:#btheme06##
 SETUVAR fish_color_escape:#btheme08##
 SETUVAR fish_color_history_current:normal
 SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:normal
 SETUVAR fish_color_normal:#btheme05##
 SETUVAR fish_color_operator:#btheme08##
