@@ -24,6 +24,7 @@ Plug 'neoclide/coc.nvim',
 Plug 'cespare/vim-toml'                 " TOML support
 Plug 'stephpy/vim-yaml'                 " YAML support
 Plug 'rust-lang/rust.vim'               " Rust support
+Plug 'godlygeek/tabular'                " Markdown support
 Plug 'plasticboy/vim-markdown'          " Markdown support
 Plug 'kovetskiy/sxhkd-vim'              " For BSPWM's sxhkd
 
@@ -60,6 +61,8 @@ let mapleader='\'
 set backspace=indent,eol,start  " Backspace across line breaks, start-of-insert, etc.
 set encoding=utf-8              " Default for new files is UTF-8
 set expandtab                   " Tabs are evil
+set conceallevel=2
+set concealcursor=nc
 set cursorline                  " Highlight current line
 set cursorcolumn                " Highlight current column
 set hidden                      " Allow background buffers to stay loaded
