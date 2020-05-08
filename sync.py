@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import sh
 import mimetypes
 import yaml
 
@@ -23,8 +24,7 @@ def newer_than(path1, path2):
     return os.path.getmtime(path1) > os.path.getmtime(path2)
 
 def is_themable(path):
-    mime_type = mimetypes.guess_type(path)
-    return mime_type[0].startswith("text/")
+    return sh.file("--brief", "--mime-type", path).startswith("text/")
 
 def extract_template(themed, template, theme):
     shutil._ensure_directory(template)
