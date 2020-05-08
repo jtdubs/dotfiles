@@ -11,7 +11,7 @@ super + shift + {Return,a}
 super + r
 	dmenu_run \
 		-l 8 \
-		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
+		-fn 'xft:Noto Sans Mono:size=14:antialias=true' \
 		-nb "##theme0C##" \
 		-nf "##theme00##" \
 		-sb "##theme0D##" \

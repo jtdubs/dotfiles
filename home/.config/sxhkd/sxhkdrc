@@ -11,7 +11,7 @@ super + shift + {Return,a}
 super + r
 	dmenu_run \
 		-l 8 \
-		-fn 'xft:Noto Sans Mono:size=12:antialias=true' \
+		-fn 'xft:Noto Sans Mono:size=14:antialias=true' \
 		-nb "#3B6C83" \
 		-nf "#181818" \
 		-sb "#658FA2" \
