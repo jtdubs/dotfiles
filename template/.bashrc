@@ -129,6 +129,10 @@ export EDITOR=nvim
 
 # programming
 export PATH=$PATH:~/.local/bin
+if [ -d ~/.cargo ]
+then
+    export PATH=$PATH:~/.cargo/bin
+fi
 export PATH=$PATH:~/bin
 
 # ps1
