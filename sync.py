@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import mimetypes
 import yaml
 
 def list_files(path):
@@ -21,29 +22,46 @@ def to_locations(path):
 def newer_than(path1, path2):
     return os.path.getmtime(path1) > os.path.getmtime(path2)
 
+def is_themable(path):
+    mime_type = mimetypes.guess_type(path)
+    return mime_type[0].startswith("text/")
+
 def extract_template(themed, template, theme):
     shutil._ensure_directory(template)
-    with open(themed, "r") as i:
-        with open(template, "w") as o:
-            contents = i.read()
-            for k, v in theme.items():
-                contents = contents.replace("#"+v, "##"+k+"##")
-                contents = contents.replace("0x"+v, "#x"+k+"##")
-                contents = contents.replace(v, "#b"+k+"##")
-            o.write(contents)
+
+    if is_themable(themed):
+        print("Extracting template for", themed, "...")
+        with open(themed, "r") as i:
+            with open(template, "w") as o:
+                contents = i.read()
+                for k, v in theme.items():
+                    contents = contents.replace("#"+v, "##"+k+"##")
+                    contents = contents.replace("0x"+v, "#x"+k+"##")
+                    contents = contents.replace(v, "#b"+k+"##")
+                o.write(contents)
+    else:
+        print("Keeping template copy of binary ", themed, "...")
+        shutil.copy2(themed, template)
+
     mod_time = os.path.getmtime(themed)
     os.utime(template, (mod_time, mod_time))
 
 def apply_theme(template, themed, theme):
     shutil._ensure_directory(themed)
-    with open(template, "r") as i:
-        with open(themed, "w") as o:
-            contents = i.read()
-            for k, v in theme.items():
-                contents = contents.replace("##"+k+"##", "#"+v)
-                contents = contents.replace("#x"+k+"##", "0x"+v)
-                contents = contents.replace("#b"+k+"##", v)
-            o.write(contents)
+
+    if is_themable(template):
+        print("Applying theme to", template, "...")
+        with open(template, "r") as i:
+            with open(themed, "w") as o:
+                contents = i.read()
+                for k, v in theme.items():
+                    contents = contents.replace("##"+k+"##", "#"+v)
+                    contents = contents.replace("#x"+k+"##", "0x"+v)
+                    contents = contents.replace("#b"+k+"##", v)
+                o.write(contents)
+    else:
+        print("Creating themed copy of binary ", template, "...")
+        shutil.copy2(template, themed)
 
 def main():
     theme = get_theme()
@@ -52,7 +70,6 @@ def main():
     for themed_file in list_files("home"):
         template_file, _, _ = to_locations(themed_file)
         if not os.path.exists(template_file):
-            print("Extracting template for", themed_file, "...")
             extract_template(themed_file, template_file, theme)
 
     # Step #2: Take any updated template/ files and apply the current theme to produce new home/ files
@@ -60,7 +77,6 @@ def main():
     for template_file in list_files("template"):
         _, themed_file, _ = to_locations(template_file)
         if not os.path.exists(themed_file) or newer_than(template_file, themed_file) or newer_than("theme.yml", themed_file):
-            print("Applying theme to", template_file, "...")
             apply_theme(template_file, themed_file, theme)
 
     # Step #3: Compare template/ and ~/.  Take whichever file is newer.  If ~ file doesn't exist, that counts as older.
@@ -74,7 +90,6 @@ def main():
             print("Pulling", home_file, "...")
             shutil.copy2(home_file, themed_file)
             shutil._ensure_directory(home_file)
-            print("Extracting template for", themed_file, "...")
             extract_template(themed_file, template_file, theme)
 
 if __name__ == "__main__":
