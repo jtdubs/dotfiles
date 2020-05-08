@@ -1,7 +1,11 @@
 #!/bin/sh
 
 # set screen resolution
-~/bin/auto_monitor.sh
+if [ ! -e /usr/bin/vmtoolsd ]
+then
+    # not needed in a VM
+    ~/bin/auto_monitor.sh
+fi
 
 # compositing
 compton &
@@ -15,11 +19,19 @@ numlockx on
 
 # startup services
 dbus-update-activation-environment --systemd DISPLAY
-xscreensaver -nosplash &
+if [ ! -e /usr/bin/vmtoolsd ]
+then
+    # not needed in a VM
+    xscreensaver -nosplash &
+fi
 start-pulseaudio-x11
 
 # toolbar
-nm-applet &
+if [ ! -e /usr/bin/vmtoolsd ]
+then
+    # not needed in a VM
+    nm-applet &
+fi
 ~/.config/polybar/launch-polybar.sh &
 
 # startup apps
