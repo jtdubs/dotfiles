@@ -27,11 +27,7 @@ fi
 start-pulseaudio-x11
 
 # toolbar
-if [ ! -e /usr/bin/vmtoolsd ]
-then
-    # not needed in a VM
-    nm-applet &
-fi
+nm-applet &
 ~/.config/polybar/launch-polybar.sh &
 
 # startup apps
