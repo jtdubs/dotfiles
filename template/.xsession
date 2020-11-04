@@ -8,7 +8,7 @@ then
 fi
 
 # compositing
-compton &
+picom &
 
 # basic config
 feh --auto-zoom --bg-fill ~/.local/share/backgrounds/hardy_blue.png
