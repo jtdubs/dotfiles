@@ -30,7 +30,7 @@ def extract_template(themed, template, theme):
     shutil._ensure_directory(template)
 
     if is_themable(themed):
-        print("Extracting template for", themed, "...")
+        # print("Extracting template for", themed, "...")
         with open(themed, "r") as i:
             with open(template, "w") as o:
                 contents = i.read()
@@ -40,7 +40,7 @@ def extract_template(themed, template, theme):
                     contents = contents.replace(v, "#b"+k+"##")
                 o.write(contents)
     else:
-        print("Keeping template copy of binary ", themed, "...")
+        # print("Keeping template copy of binary ", themed, "...")
         shutil.copy2(themed, template)
 
     mod_time = os.path.getmtime(themed)
@@ -50,7 +50,7 @@ def apply_theme(template, themed, theme):
     shutil._ensure_directory(themed)
 
     if is_themable(template):
-        print("Applying theme to", template, "...")
+        # print("Applying theme to", template, "...")
         with open(template, "r") as i:
             with open(themed, "w") as o:
                 contents = i.read()
@@ -60,7 +60,7 @@ def apply_theme(template, themed, theme):
                     contents = contents.replace("#b"+k+"##", v)
                 o.write(contents)
     else:
-        print("Creating themed copy of binary ", template, "...")
+        # print("Creating themed copy of binary ", template, "...")
         shutil.copy2(template, themed)
 
 def main():
