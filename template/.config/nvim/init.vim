@@ -10,6 +10,7 @@ Plug 'ciaranm/securemodelines'          " Prevent code execution through modelin
 " Plug 'jlanzarotta/bufexplorer'          " Sidebar buffer explorer
 Plug 'airblade/vim-rooter'              " Auto-switch CWD to root of project
 Plug 'jceb/vim-orgmode'                 " EMACS org-mode clone
+Plug 'thaerkh/vim-workspace'            " Auto sessions
 
 " UI
 Plug 'itchyny/lightline.vim'            " Prettier, more useful modeline
@@ -29,8 +30,9 @@ Plug 'plasticboy/vim-markdown'          " Markdown support
 Plug 'kovetskiy/sxhkd-vim'              " For BSPWM's sxhkd
 
 " FZF
-Plug '~/.fzf'                           " FZF
+" Plug '~/.fzf'                           " FZF
 Plug 'junegunn/fzf.vim'                 " FZF
+Plug 'junegunn/fzf'                    " FZF
 call plug#end()
 
 
