@@ -132,6 +132,11 @@ nnoremap k gk
 
 
 "
+" Workspace config
+"
+let g:workspace_session_disable_on_args = 1
+
+"
 " Lightline config
 "
 let g:lightline = {

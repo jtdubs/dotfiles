@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+
+# set path
+if [ -d ~/.cargo/bin ]
+then
+    export PATH=~/.cargo.bin:$PATH
+fi
 
 # set screen resolution
 if [ ! -e /usr/bin/vmtoolsd ]
