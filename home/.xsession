@@ -3,7 +3,7 @@
 # set path
 if [ -d ~/.cargo/bin ]
 then
-    export PATH=~/.cargo.bin:$PATH
+    export PATH=~/.cargo/bin:$PATH
 fi
 
 # set screen resolution
