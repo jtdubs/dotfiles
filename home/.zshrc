@@ -1,3 +1,8 @@
+if ! pidof -q nix-daemon; then
+    echo Starting nix-daemon
+    sudo nohup `which nix-daemon` > /dev/null 2>&1 &
+fi
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
