@@ -34,6 +34,6 @@ if [ -d ~/.config/nixpkgs ]; then
 fi
 ln -sf $PWD ~/.config/nixpkgs
 
-home-manager switch
+home-manager switch -b backup
 
 echo Installation complete.
