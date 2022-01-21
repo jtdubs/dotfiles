@@ -5,8 +5,8 @@ set -eEuo pipefail
 #
 # Nix w/ Home Manager install (manual)
 #
-
 # sh <(curl -L https://nixos.org/nix/install) --daemon
+# ... restart shell ...
 # sudo `which nix-daemon` &
 # 
 # echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels' >> ~/.profile
@@ -15,6 +15,7 @@ set -eEuo pipefail
 # nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 # nix-channel --update
 # nix-shell '<home-manager>' -A install
+#
 
 if uname -r | grep -qi wsl; then
   echo Detected OS: WSL
