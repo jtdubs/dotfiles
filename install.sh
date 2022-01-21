@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -eEuo pipefail
 
@@ -16,13 +16,13 @@ set -eEuo pipefail
 # nix-channel --update
 # nix-shell '<home-manager>' -A install
 
-if uname -r | grep -i wsl; then
+if uname -r | grep -qi wsl; then
   echo Detected OS: WSL
   ln -sf $PWD/home-wsl.nix home.nix
-elif grep -i ubuntu /etc/os-release
+elif grep -qi ubuntu /etc/os-release; then
   echo Detected OS: Ubuntu
   ln -sf $PWD/home-ubuntu.nix home.nix
-elif grep -i nixos /etc/os-release
+elif grep -qi nixos /etc/os-release; then
   echo Detected OS: NixOS
   ln -sf $PWD/home-nixos.nix home.nix
 else
@@ -33,5 +33,7 @@ if [ -d ~/.config/nixpkgs ]; then
   rm -Rf ~/.config/nixpkgs
 fi
 ln -sf $PWD ~/.config/nixpkgs
+
+home-manager switch
 
 echo Installation complete.
