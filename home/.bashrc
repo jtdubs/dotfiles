@@ -116,33 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# j
-# source ~/tools/j/j.sh
-
-# java + xmonad fix
-export _JAVA_AWT_WM_NONREPARENTING=1
-
 # editor
-# set -o vi
 export VISUAL=nvim
 export EDITOR=nvim
 
-# programming
-export PATH=$PATH:~/.local/bin
-if [ -d ~/.cargo ]
-then
-    export PATH=$PATH:~/.cargo/bin
-fi
-export PATH=$PATH:~/bin
-
 # ps1
-export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\033[38;5;006m\]\u\[\033[38;5;005m\]@\[\033[38;5;005m\]\h\[\033[38;5;007m\]:\[\033[38;5;004m\]\w\[\033[38;5;006m\]$(__git_ps1 " (%s)") \[\033[38;5;009m\]\$\[\033[00m\] '
-
-# fzf
-export FZF_DEFAULT_COMMAND="fdfind --type f --follow --hidden --exclude .git --color always"
-export FZF_DEFAULT_OPTS="--ansi"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fdfind --type d --follow --hidden --exclude .git --color always"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PS1='\[\033[38;5;006m\]\u\[\033[38;5;005m\]@\[\033[38;5;005m\]\h\[\033[38;5;007m\]:\[\033[38;5;004m\]\w\[\033[38;5;006m\]$ '
