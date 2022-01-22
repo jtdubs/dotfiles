@@ -23,6 +23,7 @@
 
   # Config files
   home.file.".zshrc".source = ./home/.zshrc;
+  home.file.".zshtheme".source = ./home/.zshtheme;
   home.file.".bashrc".source = ./home/.bashrc;
   home.file.".bash_login".source = ./home/.bash_login;
   home.file.".bash_aliases".source = ./home/.bash_aliases;

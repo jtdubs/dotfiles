@@ -215,4 +215,4 @@ set -g status-position top
 unbind _
 bind | split-window -h
 
-set-option -g default-shell /usr/bin/fish
+set-option -g default-shell ~/.nix-profile/bin/zsh
