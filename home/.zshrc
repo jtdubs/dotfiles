@@ -25,12 +25,16 @@ if [ ! -f ~/.zsh/antigen.zsh ]; then
 fi
 source ~/.zsh/antigen.zsh
 
+# Plugins
 antigen use oh-my-zsh
-
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
+antigen bundle git@github.com:spwhitt/nix-zsh-completions.git
+antigen bundle git@github.com:chisui/zsh-nix-shell.git
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen apply
+
+# Theme
+source ~/.zshtheme
