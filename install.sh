@@ -17,7 +17,10 @@ set -eEuo pipefail
 # nix-shell '<home-manager>' -A install
 #
 
-if uname -r | grep -qi wsl; then
+if [ $UID  -eq 0 ]; then
+  echo Detected Root
+  ln -sf $PWD/root.nix home.nix
+elif uname -r | grep -qi wsl; then
   echo Detected OS: WSL
   ln -sf $PWD/home-wsl.nix home.nix
 elif grep -qi ubuntu /etc/os-release; then

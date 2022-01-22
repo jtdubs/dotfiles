@@ -32,8 +32,8 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
-antigen bundle git@github.com:spwhitt/nix-zsh-completions.git
-antigen bundle git@github.com:chisui/zsh-nix-shell.git
+antigen bundle spwhitt/nix-zsh-completions
+antigen bundle chisui/zsh-nix-shell
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
@@ -44,20 +44,22 @@ DEFAULT_USER=jtdubs
 source ~/.zshtheme
 
 # tmux
-if (( $+commands[tmux] )); then
-    if [ -z "$TMUX" ]; then
-        if [ -n "$VSCODE_GIT_IPC_HANDLE" ]; then
-            TMUX_SESSION=vscode
-        else
-            TMUX_SESSION=default
-        fi
+if [ "$UID" -ne 0 ]; then
+    if (( $+commands[tmux] )); then
+        if [ -z "$TMUX" ]; then
+            if [ -n "$VSCODE_GIT_IPC_HANDLE" ]; then
+                TMUX_SESSION=vscode
+            else
+                TMUX_SESSION=default
+            fi
 
-        if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
-            exec tmux attach -t $TMUX_SESSION
+            if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
+                exec tmux attach -t $TMUX_SESSION
+            else
+                exec tmux new-session -s $TMUX_SESSION
+            fi
         else
-            exec tmux new-session -s $TMUX_SESSION
+            echo
         fi
-    else
-        echo
     fi
 fi
