@@ -41,3 +41,14 @@ antigen apply
 # PROMPT='%F{6}%n%F{5}@%m%F{7}:%F{4}%2~%F{6}%(!.#.$) '
 DEFAULT_USER=jtdubs
 source ~/.zshtheme
+
+# tmux
+if [ -z "$TMUX" ]; then
+    if tmux has-session default; then
+        tmux attach -t default
+    else
+        tmux new-session -t default
+    fi
+else
+    echo
+fi

@@ -152,7 +152,7 @@ tmux_conf_theme_status_left=' ❐ #S '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}| #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='#C0C0C0,#181818,#181818'  # black, white , white
+tmux_conf_theme_status_left_fg='#C0C0C0,#181818,#181818'  # black, white, white
 tmux_conf_theme_status_left_bg='#505050,#C0C0C0,#3B6C83'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='none,none,none'
 
@@ -214,5 +214,10 @@ set -g status-position top
 # change split key to |
 unbind _
 bind | split-window -h
+
+# double-status
+# set -g status 2
+# set -Fg 'status-format[1]' '#{status-format[0]}'
+# set -g 'status-format[0]' ''
 
 set-option -g default-shell ~/.nix-profile/bin/zsh
