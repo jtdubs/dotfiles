@@ -7,7 +7,7 @@ filetype off
 "
 call plug#begin()
 Plug 'ciaranm/securemodelines'          " Prevent code execution through modelines
-" Plug 'jlanzarotta/bufexplorer'          " Sidebar buffer explorer
+Plug 'jlanzarotta/bufexplorer'          " Sidebar buffer explorer
 Plug 'airblade/vim-rooter'              " Auto-switch CWD to root of project
 Plug 'jceb/vim-orgmode'                 " EMACS org-mode clone
 Plug 'thaerkh/vim-workspace'            " Auto sessions
@@ -18,7 +18,6 @@ Plug 'machakann/vim-highlightedyank'    " Show yanks briefly after a highlight
 Plug 'andymass/vim-matchup'             " Show text of matches when highlighting start/end tag
 
 " Syntax support
-Plug 'cespare/vim-toml'                 " TOML support
 Plug 'stephpy/vim-yaml'                 " YAML support
 Plug 'rust-lang/rust.vim'               " Rust support
 Plug 'godlygeek/tabular'                " Markdown support

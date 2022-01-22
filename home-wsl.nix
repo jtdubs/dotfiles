@@ -15,6 +15,7 @@
     pkgs.tmux
     pkgs.noto-fonts
     pkgs.zsh
+    pkgs.fzf
   ];
 
   # Config files
@@ -31,6 +32,7 @@
   home.file.".config/nvim/init.vim".source = ./home/.config/nvim/init.vim;
   home.file.".config/nvim/autoload/plug.vim".source = ./home/.config/nvim/autoload/plug.vim;
   home.file.".config/nvim/colors/custom-theme.vim".source = ./home/.config/nvim/colors/custom-theme.vim;
+  home.file.".config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/base16auto.vim".source = home/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/base16auto.vim;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
