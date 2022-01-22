@@ -1,3 +1,9 @@
 [user]
-	email = jtdubs@gmail.com
-	name = Justin Dubs
+    email = jtdubs@gmail.com
+    name = Justin Dubs
+
+[init]
+    defaultBranch = main
+
+[http]
+    cookiefile = ~/.gitcookies
