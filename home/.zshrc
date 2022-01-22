@@ -45,13 +45,19 @@ source ~/.zshtheme
 
 # tmux
 if (( $+commands[tmux] )); then
-    if [ -z "$TMUX" -a -z "$VSCODE_GIT_IPC_HANDLE" ]; then
-        if tmux has-session -t default >/dev/null 2>&1; then
-            exec tmux attach -t default
+    if [ -z "$TMUX" ]; then
+        if [ -n "$VSCODE_GIT_IPC_HANDLE" ]; then
+            TMUX_SESSION=vscode
         else
-            exec tmux new-session -s default
+            TMUX_SESSION=default
         fi
-    elif [ -z "$TMUX" ]; then
+
+        if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
+            exec tmux attach -t $TMUX_SESSION
+        else
+            exec tmux new-session -s $TMUX_SESSION
+        fi
+    else
         echo
     fi
 fi
