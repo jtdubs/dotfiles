@@ -43,12 +43,14 @@ DEFAULT_USER=jtdubs
 source ~/.zshtheme
 
 # tmux
-if [ -z "$TMUX" ]; then
-    if tmux has-session default; then
-        tmux attach -t default
+if (( $+commands[tmux] )); then
+    if [ -z "$TMUX" ]; then
+        if tmux has-session -t default >/dev/null 2>&1; then
+            exec tmux attach -t default
+        else
+            exec tmux new-session -s default
+        fi
     else
-        tmux new-session -t default
+        echo
     fi
-else
-    echo
 fi
