@@ -49,6 +49,9 @@ if [ "$UID" -ne 0 ]; then
         if [ -z "$TMUX" ]; then
             if [ -n "$VSCODE_GIT_IPC_HANDLE" ]; then
                 TMUX_SESSION=vscode
+                if [ -n "$VSCODE_PROJECT" ]; then
+                    TMUX_SESSION=$VSCODE_PROJECT
+                fi
             else
                 TMUX_SESSION=default
             fi
