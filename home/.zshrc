@@ -1,9 +1,3 @@
-# Start nix-daemon
-if ! pidof -q nix-daemon; then
-    echo Starting nix-daemon
-    sudo nohup `which nix-daemon` > /dev/null 2>&1 &
-fi
-
 # History
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -32,8 +26,6 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
-antigen bundle spwhitt/nix-zsh-completions
-antigen bundle chisui/zsh-nix-shell
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
