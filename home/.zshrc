@@ -34,10 +34,8 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
-# Theme
-# PROMPT='%F{6}%n%F{5}@%m%F{7}:%F{4}%2~%F{6}%(!.#.$) '
-DEFAULT_USER=jtdubs
-source ~/.zshtheme
+# Starship
+eval "$(starship init zsh)"
 
 # tmux
 if [ "$UID" -ne 0 ]; then
