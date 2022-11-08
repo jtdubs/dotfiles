@@ -13,6 +13,10 @@ alias x=exit
 alias vi=nvim
 alias vim=nvim
 alias enter='nix-shell . --command zsh'
+alias blaze=bazel
+
+# Path
+export PATH=$PATH:~/.cargo/bin:~/bin:/usr/local/go/bin:~/go/bin
 
 # Install antigen
 if [ ! -f ~/.zsh/antigen.zsh ]; then
