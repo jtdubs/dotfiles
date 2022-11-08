@@ -38,25 +38,19 @@ antigen apply
 eval "$(starship init zsh)"
 
 # tmux
-if [ "$UID" -ne 0 ]; then
-    if (( $+commands[tmux] )); then
-        if [ -z "$TMUX" ]; then
-            if [ -n "$VSCODE_GIT_IPC_HANDLE" ]; then
-                TMUX_SESSION=vscode
-                if [ -n "$VSCODE_PROJECT" ]; then
-                    TMUX_SESSION=$VSCODE_PROJECT
+if [[ x"$VSCODE_CWD" == x"" ]] then
+    if [ "$UID" -ne 0 ]; then
+        if (( $+commands[tmux] )); then
+            if [ -z "$TMUX" ]; then
+                TMUX_SESSION=default
+                if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
+                    exec tmux attach -t $TMUX_SESSION
+                else
+                    exec tmux new-session -s $TMUX_SESSION
                 fi
             else
-                TMUX_SESSION=default
+                echo
             fi
-
-            if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
-                exec tmux attach -t $TMUX_SESSION
-            else
-                exec tmux new-session -s $TMUX_SESSION
-            fi
-        else
-            echo
         fi
     fi
 fi
