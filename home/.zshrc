@@ -18,6 +18,9 @@ alias blaze=bazel
 # Path
 export PATH=$PATH:~/.cargo/bin:~/bin:/usr/local/go/bin:~/go/bin
 
+# Editor
+export EDITOR=nvim
+
 # Install antigen
 if [ ! -f ~/.zsh/antigen.zsh ]; then
     mkdir -p ~/.zsh
