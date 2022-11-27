@@ -65,3 +65,5 @@ if [[ x"$VSCODE_CWD" == x"" ]] then
         fi
     fi
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
