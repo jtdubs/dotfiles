@@ -67,3 +67,6 @@ if [[ x"$VSCODE_CWD" == x"" ]] then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Disable history sharing
+unsetopt share_history
