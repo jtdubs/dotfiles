@@ -50,7 +50,10 @@ if [[ x"$VSCODE_CWD" == x"" ]] then
     if [ "$UID" -ne 0 ]; then
         if (( $+commands[tmux] )); then
             if [ -z "$TMUX" ]; then
-                TMUX_SESSION=default
+                TMUX_SESSION=$VSCODE_PROJECT
+                if [ -z "$TMUX_SESSION" ]; then
+                    TMUX_SESSION=default
+                fi
                 if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
                     exec tmux attach -t $TMUX_SESSION
                 else
