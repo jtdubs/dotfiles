@@ -123,3 +123,5 @@ export EDITOR=nvim
 # ps1
 export PS1='\[\033[38;5;006m\]\u\[\033[38;5;005m\]@\[\033[38;5;005m\]\h\[\033[38;5;007m\]:\[\033[38;5;004m\]\w\[\033[38;5;006m\]$ '
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
