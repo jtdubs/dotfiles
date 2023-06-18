@@ -7,7 +7,7 @@ After=network-online.target
 Type=notify
 Environment=RCLONE_CONFIG=/home/jtdubs/.config/rclone/rclone.conf
 RestartSec=5
-ExecStart=/home/jtdubs/go/bin/rclone mount GDrive: /home/jtdubs/Documents/GDrive \
+ExecStart=rclone mount GDrive: /home/jtdubs/Documents/GDrive \
 # Google Drive is a polling remote so this value can be set very high and any changes are detected via polling.
 --dir-cache-time 5000h \
 # Log file location

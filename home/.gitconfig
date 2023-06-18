@@ -10,3 +10,6 @@
 
 [credential "https://source.developers.google.com"]
     helper = gcloud.sh
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/

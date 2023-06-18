@@ -14,9 +14,10 @@ alias vi=nvim
 alias vim=nvim
 alias enter='nix-shell . --command zsh'
 alias blaze=bazel
+alias t='tmux new-session -A -s'
 
 # Path
-export PATH=$PATH:~/.cargo/bin:~/bin:/usr/local/go/bin:~/go/bin
+export PATH=$PATH:~/.cargo/bin:~/bin:~/.local/bin:~/go/bin:/usr/local/go/bin
 
 # Editor
 export EDITOR=nvim
@@ -38,6 +39,7 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
+antigen bundle dotenv
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
@@ -45,28 +47,32 @@ antigen apply
 # Starship
 eval "$(starship init zsh)"
 
-# tmux
-if [[ x"$VSCODE_CWD" == x"" ]] then
-    if [ "$UID" -ne 0 ]; then
-        if (( $+commands[tmux] )); then
-            if [ -z "$TMUX" ]; then
-                TMUX_SESSION=$VSCODE_PROJECT
-                if [ -z "$TMUX_SESSION" ]; then
-                    TMUX_SESSION=default
-                fi
-                if tmux has-session -t $TMUX_SESSION >/dev/null 2>&1; then
-                    exec tmux attach -t $TMUX_SESSION
-                else
-                    exec tmux new-session -s $TMUX_SESSION
-                fi
-            else
-                echo
-            fi
-        fi
-    fi
-fi
+# Risc-V Toolchain
+export PATH=$PATH:/opt/riscv32/bin
 
+# Verilator
+export PATH=$PATH:$HOME/dev/verilator/bin
+export VERILATOR_ROOT=$HOME/dev/verilator
+
+# Vivado
+export PATH=$PATH:/opt/Xilinx/Vivado/2022.2/bin
+
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Disable history sharing
 unsetopt share_history
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PATH:$HOME/.pyenv/bin"
+eval "$(pyenv init -)"
+
+# tmux
+if [[ "$TERM_PROGRAM" != "vscode" ]] && [[ "$TERM_PROGRAM" != "tmux" ]] && [[ "$UID" -ne 0 ]] && (( $+commands[tmux] )) then
+    TMUX_SESSION=$VSCODE_PROJECT
+    if [ -z "$TMUX_SESSION" ]; then
+        TMUX_SESSION=default
+    fi
+    exec tmux new-session -A -s $TMUX_SESSION
+fi
