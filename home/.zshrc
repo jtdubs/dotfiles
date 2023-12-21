@@ -54,9 +54,6 @@ export PATH=$PATH:/opt/riscv32/bin
 export PATH=$PATH:$HOME/dev/verilator/bin
 export VERILATOR_ROOT=$HOME/dev/verilator
 
-# Vivado
-export PATH=$PATH:/opt/Xilinx/Vivado/2022.2/bin
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
