@@ -29,6 +29,7 @@ LINKS=(
     ".config/starship.toml"
     ".config/systemd/user/gdrive.service"
     ".gitconfig"
+    ".local/share/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/base16auto.vim"
     ".profile"
     ".ssh/environment"
     ".tmux.conf"
@@ -37,16 +38,16 @@ LINKS=(
     ".zshtheme"
 )
 
-# echo "Installing packages..."
-# export DEBIAN_FRONTEND=noninteractive 
-# sudo apt-get -qq update
-# for p in ${PACKAGES[@]}; do
-#     # Check if package is already installed
-#     if [ $(apt list -qq --installed $p 2>/dev/null | wc -l) -ne 1 ]; then
-#         sudo apt-get install -y $p
-#     fi
-# done
-# echo "Done."
+echo "Installing packages..."
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get -qq update
+for p in ${PACKAGES[@]}; do
+    # Check if package is already installed
+    if [ $(apt list -qq --installed $p 2>/dev/null | wc -l) -ne 1 ]; then
+        sudo apt-get install -y $p
+    fi
+done
+echo "Done."
 
 if command -v go >/dev/null; then
     echo "Install golang tools..."
@@ -67,7 +68,7 @@ fi
 
 echo "Creating symlinks..."
 for l in ${LINKS[@]}; do
-    if ! readlink $HOME/$l; then
+    if ! readlink $HOME/$l > /dev/null; then
         ln -sf $PWD/home/$l $HOME/$l
     fi
 done
