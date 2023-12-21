@@ -20,6 +20,31 @@ bar swaybar_command waybar
 ## Outputs
 output * bg /usr/share/backgrounds/jj_light_by_Hiking93.jpg fill
 
+set $laptop "eDP-1"
+set $monitor "DP-1"
+
+output $laptop {
+    mode 2256x1504@59.999Hz
+    position 1920 0
+    scale 2
+    scale_filter smart
+}
+
+output $monitor {
+    mode 3840x2160@60Hz
+    position 0 0
+    scale 2
+    scale_filter smart
+}
+
+focus output $monitor
+
+workspace 1 output $monitor
+workspace 2 output $laptop
+
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
 ## Default mode
 mode "default" {
     # Launch apps
