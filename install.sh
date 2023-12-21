@@ -3,16 +3,13 @@
 set -eEuo pipefail
 
 PACKAGES=(
-    bazel
     build-essential
     code
     curl
     git
     gnome-tweaks
     google-chrome-stable
-    keepassxc
     neovim
-    nmap
     python3
     python3-pip
     python3-venv
