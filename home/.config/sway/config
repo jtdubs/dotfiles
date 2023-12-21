@@ -6,13 +6,21 @@ set $left  h
 set $down  j
 set $up    k
 set $right l
-set $menu  dmenu_path | dmenu | xargs swaymsg exec --
 
 ## Defaults
-default_border pixel 2 # no window borders
+default_border pixel 2
 smart_borders  on
 smart_gaps     on
 floating_modifier $mod normal
+
+# Theme
+set $bright #84A8BA
+set $dark #181818
+set $text #C0C0C0
+client.focused $bright $bright $text
+client.focused_inactive $dark $dark $text
+client.unfocused $dark $dark $text
+client.background $dark
 
 # Bar
 bar swaybar_command waybar
@@ -21,8 +29,11 @@ bar swaybar_command waybar
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
+## Inputs
+input * xkb_numlock enabled
+
 ## Outputs
-output * bg /usr/share/backgrounds/jj_light_by_Hiking93.jpg fill
+output * bg #181818 solid_color
 
 set $laptop "eDP-1"
 set $monitor "DP-1"
@@ -52,9 +63,10 @@ bindswitch --reload --locked lid:off output $laptop enable
 ## Default mode
 mode "default" {
     # Launch apps
-    bindsym $mod+Return exec alacritty
-    bindsym $mod+c      exec google-chrome
-    bindsym $mod+r      exec $menu
+    bindsym $mod+Return  exec alacritty
+    bindsym $mod+c       exec google-chrome
+    bindsym $mod+r       exec tofi-run  | xargs swaymsg exec --
+    bindsym $mod+Shift+r exec tofi-drun | xargs swaymsg exec --
 
     # Function keys
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
@@ -76,14 +88,14 @@ mode "default" {
 
     # Layout
     bindsym $mod+f fullscreen
-    bindsym $mod+b splith # Split horizontal
-    bindsym $mod+v splitv # Split vertical
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
     bindsym $mod+a focus parent
     bindsym $mod+space layout toggle split
 
     # Floating layout
-    bindsym $mod+Shift+t floating toggle # Toggle current window
-    bindsym $mod+t focus mode_toggle     # Swap focus
+    bindsym $mod+Shift+t floating toggle
+    bindsym $mod+t focus mode_toggle
 
     # Move focus
     bindsym $mod+$left focus left

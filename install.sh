@@ -27,6 +27,7 @@ LINKS=(
     ".config/sway"
     ".config/swaylock"
     ".config/systemd/user/gdrive.service"
+    ".config/tofi"
     ".config/waybar"
     ".gitconfig"
     ".local/share/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/base16auto.vim"

@@ -1,0 +1,49 @@
+# Fonts
+font = "FiraCode Nerd Font"
+font-size = 10
+hint-font = true
+
+# Text theming
+text-color = #C0C0C0
+prompt-color = #C0C0C0
+placeholder-color = #C0C0C0
+input-color = #C0C0C0
+default-result-color = #707070
+selection-color = #303030
+selection-background = #A4C1CF
+
+# Layout
+prompt-text = "run: "
+
+# Window
+width = 320
+height = 480
+background-color = #181818
+outline-width = 0
+border-width = 2
+border-color = #4F7D93
+padding-top = 4
+padding-bottom = 4
+padding-left = 4
+padding-right = 4
+clip-to-padding = true
+scale = true
+
+# Window positioning
+output = ""
+anchor = center
+exclusive-zone = -1
+
+# Behavior
+hide-cursor = false
+text-cursor = false
+history = true
+require-match = true
+auto-accept-single = false
+hide-input = false
+physical-keybindings = true
+print-index = false
+drun-launch = false
+late-keyboard-init = false
+multi-instance = false
+ascii-input = false
