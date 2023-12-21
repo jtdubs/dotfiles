@@ -14,6 +14,8 @@ smart_borders  on
 smart_gaps     on
 floating_modifier $mod normal
 
+# Bar
+bar swaybar_command waybar
 
 ## Outputs
 output * bg /usr/share/backgrounds/jj_light_by_Hiking93.jpg fill
@@ -25,14 +27,23 @@ mode "default" {
     bindsym $mod+c      exec google-chrome
     bindsym $mod+r      exec $menu
 
+    # Function keys
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMedia exec google-chrome
+
     # Kill window
     bindsym $mod+w kill
 
     # Reload config
     bindsym $mod+Shift+c reload
 
-    # Logout
-    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    # Logout / Lock
+    bindsym $mod+ctrl+Shift+l exec swaylock
+    bindsym $mod+Shift+q      exec exit
 
     # Layout
     bindsym $mod+f fullscreen
@@ -98,18 +109,6 @@ mode "default" {
     bindsym $mod+ctrl+Down resize grow height 10px
     bindsym $mod+ctrl+Up resize shrink height 10px
     bindsym $mod+ctrl+Right resize grow width 10px
-}
-
-## Status Bar
-bar {
-    position top
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
 }
 
 include /etc/sway/config.d/*
