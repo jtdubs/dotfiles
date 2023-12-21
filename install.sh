@@ -24,6 +24,7 @@ LINKS=(
     ".config/alacritty"
     ".config/nvim"
     ".config/starship.toml"
+    ".config/sway"
     ".config/systemd/user/gdrive.service"
     ".gitconfig"
     ".local/share/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/base16auto.vim"
