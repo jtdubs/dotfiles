@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+let g:plug_threads = 1
+let g:plug_url_format = "git@github.com:%s.git"
 
 "
 " Load Plugins
