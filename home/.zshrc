@@ -54,6 +54,9 @@ export PATH=$PATH:/opt/riscv32/bin
 export PATH=$PATH:$HOME/dev/verilator/bin
 export VERILATOR_ROOT=$HOME/dev/verilator
 
+# Yosys and Synlig
+export PATH=$PATH:$HOME/dev/synlig/out/current/bin
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -66,7 +69,12 @@ export PATH="$PATH:$HOME/.pyenv/bin"
 eval "$(pyenv init -)"
 
 # tmux
-if [[ "$TERM_PROGRAM" != "vscode" ]] && [[ "$TERM_PROGRAM" != "tmux" ]] && [[ "$UID" -ne 0 ]] && (( $+commands[tmux] )) then
+if  [[ "$TERM_PROGRAM" != "vscode" ]] && \
+    [[ "$TERM_PROGRAM" != "tmux"   ]] && \
+    [[ "$VSCODE_RESOLVING_ENVIRONMENT" -ne 1 ]] && \
+    [[ "$UID" -ne 0 ]] && \
+    (( $+commands[tmux] )) then
+
     TMUX_SESSION=$VSCODE_PROJECT
     if [ -z "$TMUX_SESSION" ]; then
         TMUX_SESSION=default
