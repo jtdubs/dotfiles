@@ -12,6 +12,7 @@ default_border pixel 2
 smart_borders  on
 smart_gaps     on
 floating_modifier $mod normal
+focus_follows_mouse no
 
 # Theme
 set $bright #84A8BA
@@ -36,7 +37,6 @@ input * xkb_numlock enabled
 output * bg #181818 solid_color
 
 set $laptop "eDP-1"
-set $monitor "DP-1"
 
 output $laptop {
     mode 2256x1504@59.999Hz
@@ -45,16 +45,25 @@ output $laptop {
     scale_filter smart
 }
 
-output $monitor {
+output "DP-1" {
     mode 3840x2160@60Hz
     position 0 0
     scale 2
     scale_filter smart
 }
 
-focus output $monitor
+output "DP-4" {
+    mode 3840x2160@60Hz
+    position 0 0
+    scale 2
+    scale_filter smart
+}
 
-workspace 1 output $monitor
+focus output "DP-1"
+focus output "DP-4"
+
+workspace 1 output "DP-1"
+workspace 1 output "DP-4"
 workspace 2 output $laptop
 
 bindswitch --reload --locked lid:on output $laptop disable
