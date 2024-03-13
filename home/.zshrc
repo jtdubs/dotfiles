@@ -15,6 +15,9 @@ alias vim=nvim
 alias enter='nix-shell . --command zsh'
 alias blaze=bazel
 alias t='tmux new-session -A -s'
+alias code='/usr/share/code/code --enable-ozone --ozone-platform=wayland'
+alias top=btop
+
 
 # Path
 export PATH=$PATH:~/.cargo/bin:~/bin:~/.local/bin:~/go/bin:/usr/local/go/bin
@@ -50,23 +53,33 @@ eval "$(starship init zsh)"
 # Risc-V Toolchain
 export PATH=$PATH:/opt/riscv32/bin
 
-# Verilator
-export PATH=$PATH:$HOME/dev/verilator/bin
-export VERILATOR_ROOT=$HOME/dev/verilator
+# # Verilator
+# export PATH=$PATH:$HOME/dev/verilator/bin
+# export VERILATOR_ROOT=$HOME/dev/verilator
+
+# GHC
+[ -f "/home/jtdubs/.ghcup/env" ] && source "/home/jtdubs/.ghcup/env" # ghcup-env
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PATH:$HOME/.pyenv/bin"
+eval "$(pyenv init -)"
 
 # Yosys and Synlig
 export PATH=$PATH:$HOME/dev/synlig/out/current/bin
+
+# Vivado Studio
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontsettings=on -Dswing.aatext=true"
+
+# Plz
+source <(plz --completion_script)
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Disable history sharing
 unsetopt share_history
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PATH:$HOME/.pyenv/bin"
-eval "$(pyenv init -)"
 
 # tmux
 if  [[ "$TERM_PROGRAM" != "vscode" ]] && \
