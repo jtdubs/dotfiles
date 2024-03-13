@@ -8,11 +8,16 @@ set $up    k
 set $right l
 
 ## Defaults
-default_border pixel 2
 smart_borders  on
 smart_gaps     on
 floating_modifier $mod normal
 focus_follows_mouse no
+
+# No titles ever
+default_border pixel 2
+font pango:monospace 0
+titlebar_border_thickness 0
+titlebar_padding 0
 
 # Theme
 set $bright #84A8BA
@@ -100,7 +105,7 @@ mode "default" {
     bindsym $mod+b splith
     bindsym $mod+v splitv
     bindsym $mod+a focus parent
-    bindsym $mod+space layout toggle split
+    bindsym $mod+space layout toggle splith splitv stacking
 
     # Floating layout
     bindsym $mod+Shift+t floating toggle
