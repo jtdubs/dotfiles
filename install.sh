@@ -22,6 +22,7 @@ LINKS=(
     ".bash_login"
     ".bashrc"
     ".config/alacritty"
+    ".config/btop"
     ".config/nvim"
     ".config/starship.toml"
     ".config/sway"
