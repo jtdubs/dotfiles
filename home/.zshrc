@@ -18,7 +18,12 @@ alias t='tmux new-session -A -s'
 alias code='/usr/share/code/code --enable-ozone --ozone-platform=wayland'
 
 # Path
-export PATH=$PATH:~/.cargo/bin:~/bin:~/.local/bin:~/go/bin:/usr/local/go/bin
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/go/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/opt/neovim/bin
 
 # Editor
 export EDITOR=nvim
@@ -43,7 +48,7 @@ antigen bundle command-not-found
 antigen bundle dotenv
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle jeffreytse/zsh-vi-mode
+# antigen bundle jeffreytse/zsh-vi-mode
 antigen apply
 
 # Starship
@@ -91,5 +96,5 @@ if  [[ "$TERM_PROGRAM" != "vscode" ]] && \
     if [ -z "$TMUX_SESSION" ]; then
         TMUX_SESSION=default
     fi
-    exec tmux new-session -A -s $TMUX_SESSION
+    tmux new-session -A -s $TMUX_SESSION
 fi
